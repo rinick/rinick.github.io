@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title> Hashdown </title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h2 class="innerTitle">Rinick's Deep Mess</h2>
+        
+      </div>
+      <div class="ad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-3283235194066083"
+     data-ad-slot="1387164256"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+  <h2>Hashdown</h2>
+  <p>Hashdown在线工具可以转换文本，使之更易于被分享</p>
+
+<p>http://www.hashdown.net/edit.html</p>
+
+<p>支持四种编码模式</p>
+
+<h2 id="hashdown">Hashdown链接</h2>
+
+<p>Hashdown链接把文本以哈希的方式转换到Url中</p>
+
+<p>例子:<br />
+http://www.hashdown.net/#SGFzaERvd24gTGluayBpcyBBd2Vzb21l</p>
+
+<h4 id="section">理由?</h4>
+
+<p>你当然可以把文本写在博客之类在线服务，然后分享链接。但Hashdown链接的工作原理和那截然不同</p>
+
+<ul>
+  <li>编解码完全在客户端完成，服务器永远都不知道用户编码了哪些内容. 链接的哈希(Url中#之后的部分)不会被发送到网络中。</li>
+  <li>即使服务器下线或被屏蔽，你的内容也不会丢失，只要能找到任何Hashdown的镜像网站，或者离线版的Hashdown工具，内容仍可以被还原。</li>
+  <li>Hashdown支持密码加密。</li>
+</ul>
+
+<h4 id="section-1">短域名服务</h4>
+<p>短域名服务非常适合与Hashdown链接配合使用，比如: http://goo.gl/Oz9MJu</p>
+
+<p>但如果短域名服务本身下线或被屏蔽，内容也会随之一起丢失</p>
+
+<h2 id="hashdown-base2e15">Hashdown Base2e15</h2>
+
+<p><a href="https://github.com/rinick/base2e15">Base2e15</a>将文本转换成Unicode字符，每个字符存储15比特数据</p>
+
+<p>在加上Hashdown本身支持压缩，这能在有限的字符里存储更多的数据</p>
+
+<p>样本数据 ( <strong>322字符</strong> )</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>In URIs a hashmark # introduces the optional fragment near the end of the URL. The generic RFC 3986 syntax for URIs also allows an optional query part introduced by a question mark ?. In URIs with a query and a fragment, the fragment follows the query. Query parts depend on the URI scheme and are evaluated by the server.
+</code></pre>
+</div>
+<p>转换到Base2e15 ( <strong>114字符</strong> )</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>蜵웦孴쮨廳擽땧䅧橔䑚쌳唜峇땢榃堻嗐歱揘芊쁷䌷䬕䆪㽍蜞芻䂜뗊俅뀾塙륡곻摡壱䉌捃玺뫂쑽릆샱糓䀡윷㚂䰒㾎렷䝿닸孔쯝禑揩㦊莛蔍嬚쥎䕾涩屇灞䣽浚껲净꼏掸煜㳌낣췹哈潶㘁唺캮㳳萯德왔뒉䜠澎㴺데瀊킊炛㴕渄味䈥폺뙉臋艺몪爱닄焍薍䩨感휧夻프쨭㿊줘㐀
+</code></pre>
+</div>
+
+<h2 id="hashdown-1">Hashdown蝌蚪码</h2>
+<p>蝌蚪码通过Unicode中特殊的组合字符把许多字符显示在一个字符的空间</p>
+
+<p>把上面的样本数据转换到蝌蚪码:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>/ًًًًًًًًًًًًًًًًًًًًًًًٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٌٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍٍََََََََََََََََََََََََََََُُُُُُُُُُُُُُُُُُُُُُُُُُُُِِِِِِِِِِِِِِِِِِِِِِِِِِّّّّّّّّّّّّّّّّّّّّّّّّّّّّْْْْْْْْْْْْْْْْْْْْْْْْْْْْٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٰٕٕٜ۪ٕ۪۪ٕ۪ٕ۪۪۪ٜٕٜٜٕ۪۪۪۪۪ٕٕ۪۪ٕٕٕ۪۪۪ٕ۪ٜٜٕ۪ٜٕٕ۪ٕ۪۪۪۪ٕ۪ٜٕٕٕٜ۪ٜٕٕ۪ٕٕ۪۪ٜ۪ٜٜ۪۪ٜٜٜٜٜ۪ٕٜٕٜۤٓٔٔۤٔۤٓ۠ٔٔٓٔ۠ۤ۠ۤۤۤ۠۠۠ۤ۠ٓ۠ۤٓۤ۠ۤۤ۠ۤٔۤۤ۠ۤۤ۠ٓٓۤ۠ٓۤ۠ٔۤٓٓٓ۠۠۠ۤٔ۠۠ٓٔٔٓٓ۠ٓ۠ۤٓٔٔ۠ۤٓ۠ٓٓۤۤٔۤ۠ۤٓٓ۠ۤ۠ٔ۠ٓۤۤٓﾞ ( 这里其实有**426**个字符!! )
+</code></pre>
+</div>
+
+<h2 id="hashdown-2">Hashdown隐形码</h2>
+<p>隐藏文字将数据转换到ACSII的控制字符，这些字符在大多数浏览器里都不可见</p>
+
+<p>样本数据</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>你好{隐形文本}世界
+</code></pre>
+</div>
+<p>转换到隐形码</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>你好⁪​‌‍‍⁪⁪‌⁮⁬⁮⁮⁮⁪⁫⁪⁪⁭‍⁮‍⁭⁬‌⁭‍‍世界
+</code></pre>
+</div>
+<p>隐藏字符在不同字体下的兼容性不如蝌蚪码，并且不适合用来编码太长的字符。</p>
+
+<h2 id="section-2">镜像网址</h2>
+<ul>
+  <li>http://2e15.com</li>
+  <li>https://hashdown.github.io</li>
+</ul>
+
+<h2 id="api">API</h2>
+
+<p>在javascript或dart中编解码Hashdown</p>
+
+<h3 id="javascript">javascript</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://www.hashdown.net/api.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="c1">// 基本编解码</span>
+      <span class="kd">var</span> <span class="nx">encoded1</span> <span class="o">=</span> <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="s1">'Hashdown is awesome'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">decoded1</span> <span class="o">=</span> <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">encoded1</span><span class="p">);</span>
+
+      <span class="c1">// 更多编解码选项</span>
+      <span class="kd">var</span> <span class="nx">encoded2</span> <span class="o">=</span> <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="s1">'Hashdown is awesome'</span><span class="p">,{</span>
+      	<span class="s2">"codec"</span> <span class="p">:</span> <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">BASE2E15</span><span class="p">,</span>
+      	<span class="s2">"markdown"</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      	<span class="s2">"protect"</span> <span class="p">:</span>  <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">PROTECT_PASSWORD</span><span class="p">,</span>
+      	<span class="s2">"password"</span> <span class="p">:</span> <span class="s2">"mypassword"</span>
+      <span class="p">});</span>
+      <span class="kd">var</span> <span class="nx">decoded2</span> <span class="o">=</span> <span class="nx">$hashdown</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">encoded2</span><span class="p">,</span> <span class="s1">'mypassword'</span><span class="p">).</span><span class="nx">text</span><span class="p">;</span>
+    <span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="dart">dart</h3>
+
+<div class="language-dart highlighter-rouge"><pre class="highlight"><code>	<span class="kn">import</span> <span class="s">'package:hashdown/hashdown.dart'</span><span class="o">;</span>
+	
+	<span class="kt">void</span> <span class="n">main</span><span class="o">()</span> <span class="o">{</span>
+	  <span class="c1">// encode string to hashdown link</span>
+	  <span class="kt">String</span> <span class="n">hashdownLink</span> <span class="o">=</span>
+	      <span class="n">Hashdown</span><span class="o">.</span><span class="na">encodeString</span><span class="o">(</span><span class="s">'Hashdown is awesome'</span><span class="o">,</span> <span class="k">new</span> <span class="n">HashdownOptions</span><span class="o">());</span>
+	  
+	  <span class="c1">// encode string to tadpole code</span>
+	  <span class="kt">String</span> <span class="n">tadpolecode</span> <span class="o">=</span> <span class="n">Hashdown</span><span class="o">.</span><span class="na">encodeString</span><span class="o">(</span>
+	      <span class="s">'Hashdown is awesome'</span><span class="o">,</span> <span class="k">new</span> <span class="n">HashdownOptions</span><span class="o">()..</span><span class="na">codec</span> <span class="o">=</span> <span class="n">Hashdown</span><span class="o">.</span><span class="na">TADPOLE</span><span class="o">);</span>
+	<span class="o">}</span>
+</code></pre>
+</div>
+
+
+</section>
+
+<aside id="sidebar">
+<a href="http://www.weibo.com/rinick" class="button" target="_blank">
+  <div style="background-image: url(http://weibo.com/favicon.ico);"></div>
+  我的微博
+</a>
+<a href="https://github.com/rinick" class="button" target="_blank">
+  <div style="background-image: url(https://github.com/favicon.ico);"></div>
+  GitHub
+</a>
+
+
+<ul>
+  <li><a href="/index.html" >首页</a></li>
+  <br/>
+  <li>项目</li>
+  <ul>
+    <li><a href="http://namerena.github.io/help/" >名字竞技场</a></li>
+    <li><a href="/zh/hashdown.html" >Hashdown</a></li>
+    <li><a href="/zh/md5.html" >MD5大作战</a></li>
+    <li><a href="/zh/virus.html" >Virus细胞自动机</a></li>
+  </ul>
+  <br/>
+  <li>教程</li>
+  <ul>
+    <li><a href="/zh/neural-style/" >neural style<br />全民艺术家</a></li>
+    <li><a href="/zh/fractal/apophysis.html" >Apophysis</a></li>
+  </ul>
+</ul>
+<!--p></p>
+<p></p>
+<p style="font-size: smaller; position: absolute;bottom:0;margin-bottom:0;opacity: 0.8">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/architect-theme">Architect theme</a></p-->
+
+</aside>
+      </div>
+    </div>
+
+  </body>
+</html>
