@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Neural Style 教程 </title>
+    <title> 安装 Neural Style </title>
   </head>
 
   <body>
@@ -38,8 +38,53 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Neural Style 教程</h2>
-  <p>Neural Style 是一款基于神经网络的智能图像合成软件。</p>
+  <h2>安装 Neural Style</h2>
+  <p>在Ubuntu的终端里依次输入以下命令，运行每个命令时都有可能会停下来询问你的选择</p>
+<ul>
+  <li>如果提示<code class="highlighter-rouge">[yes/no]</code>， 就输<code class="highlighter-rouge">yes</code>回车，</li>
+  <li>如果提示<code class="highlighter-rouge">[Y/n]</code>就输入<code class="highlighter-rouge">Y</code>回车</li>
+  <li>如果提示<code class="highlighter-rouge">[sudo] password</code> 就输入管理员密码</li>
+</ul>
+
+<p>安装必要的编译工具</p>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install build-essential
+
+sudo apt-get install git
+
+sudo apt-get install cmake
+</code></pre>
+</div>
+
+<p>安装torch</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+
+git clone https://github.com/torch/distro.git ~/torch --recursive
+
+cd ~/torch
+
+./install.sh
+
+source ~/.bashrc
+</code></pre>
+</div>
+
+<p>安装caffee加载器</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~
+
+sudo apt-get install libprotobuf-dev protobuf-compiler
+
+luarocks install loadcaffe
+</code></pre>
+</div>
+
+<p>安装Neural Style</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/rinick/neural-style.git
+
+cd neural-style
+
+sh models/download_models.sh
+</code></pre>
+</div>
 
 
 </section>

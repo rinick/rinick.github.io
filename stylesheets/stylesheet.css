@@ -464,7 +464,7 @@ header {
   padding-top: 40px;
   padding-bottom: 40px;
   height: 20px;
-  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat;
+  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
 
@@ -501,7 +501,7 @@ header h2 {
   right:0;
   width:320px;
   height:100px;
-  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat;
+  background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
 }
 
 #content-wrapper {

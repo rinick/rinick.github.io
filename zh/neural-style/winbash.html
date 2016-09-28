@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Neural Style 教程 </title>
+    <title> 安装 Windows10 Linux子系统 </title>
   </head>
 
   <body>
@@ -38,8 +38,35 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Neural Style 教程</h2>
-  <p>Neural Style 是一款基于神经网络的智能图像合成软件。</p>
+  <h2>安装 Windows10 Linux子系统</h2>
+  <p>这篇教程只适合最新版的Windows10系统，其他请参考<a href="virtualbox.html">VirtualBox下的Ubuntu</a>安装教程</p>
+
+<h3 id="linux">启用Linux子系统</h3>
+
+<p>在Windows设置里，进入<code class="highlighter-rouge">更新和安全</code>，开启<code class="highlighter-rouge">开发人员模式</code></p>
+
+<p><img src="images/win10_setting.png" alt="" /></p>
+
+<p>在 控制面板 - 程序和功能 里，开启<code class="highlighter-rouge">Linux子系统</code></p>
+
+<p><img src="images/win10_feature.png" alt="" /></p>
+
+<p>重启后，在windows搜索里，已经可以搜索到Bash</p>
+
+<p><img src="images/win10_search.png" alt="" /></p>
+
+<p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="highlighter-rouge">y</code>回车就会开始下载</p>
+
+<p>下载完成后会提示新建一个用户，输入用户名和密码。这个用户并不需要和windows用户一致</p>
+
+<p>完成后就可以，就可以进入下一步开始<a href="install.html">Neural Style的安装了</a></p>
+
+<h3 id="section">其他</h3>
+
+<p>所有linux子系统的文件都位于这个windows隐藏目录下<code class="highlighter-rouge">%localappdata%\Lxss</code>，可以用资源管理器从这里把文件拷贝出来，但如果用资源管理器向这里写入文件可能会和linux的权限配置有冲突。</p>
+
+<p>反过来，在linux子系统下，可以在<code class="highlighter-rouge">/mnt/</code>找到所有windows文件</p>
+
 
 
 </section>
