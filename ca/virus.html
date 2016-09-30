@@ -1,0 +1,399 @@
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Game of Life,Game of Virus,Cellular Automaton">
+<title>Rick's Game of Virus</title>
+
+<script id="shader-vs" type="x-shader/x-vertex"> 
+  attribute vec3 aPos;
+  attribute vec2 aTexCoord;
+  varying   vec2 vTexCoord;
+void main(void) {
+   gl_Position = vec4(aPos, 1.);
+   vTexCoord = aTexCoord;
+}
+</script> 
+
+<script id="shader-fs" type="x-shader/x-fragment"> 
+precision mediump float;
+  uniform sampler2D uTexSamp;
+  varying vec2 vTexCoord;
+  const float dx=[replacedx], dy=[replacedy], st = 1./255.5;
+
+  const float nn = 16.;
+  const float n1 = 1./nn;
+  const float n2 = n1 * 2.0;
+  const float n3 = n1 * 3.0;
+  int v1; // cytoplasm
+  int v2; // virus
+  int v3; // wall
+  void countP(vec2 pt){
+    vec4 c = texture2D(uTexSamp, pt);
+    float v = c.r*nn;
+    if (v  < 0.5) {
+
+    }else if (v  < 1.5) {
+      v1 = v1 + 1;
+    }else if (v  < 2.5) {
+      v2 = v2 + 1;
+    }else if (v  < 3.5) {
+      v3 = v3 + 1;
+    }
+  }
+  void main(void) {
+   
+     countP(vTexCoord + vec2(0., dy));
+     countP(vTexCoord - vec2(0., dy));
+     countP(vTexCoord + vec2(dx, 0.));
+     countP(vTexCoord - vec2(dx, 0.));
+     countP(vTexCoord + vec2(dx, dy));
+     countP(vTexCoord - vec2(dx, dy));
+     countP(vTexCoord + vec2(dx, -dy));
+     countP(vTexCoord - vec2(dx, -dy));
+
+     vec4 old = texture2D(uTexSamp, vTexCoord);
+     int v =  int(old.r*nn + 0.5);
+
+     float rslt;
+     if (v < 2){
+      if (v2 == 3){
+        rslt = n2;
+      } else if (v == 1){
+        if (v2 > 3 || v1 == 0){
+          rslt = 0.0;
+        } else {
+          rslt = n1;
+        }
+      } else {
+        if (v1 == 0) {
+          rslt = 0.0;
+        } else {
+          if (v3 > 0  && v2 == 0) {
+            rslt = n3;
+          } else if (v1 == 3  || (v2 > 0 && v2 < 3)) {
+            rslt = n1;
+          } else {
+            rslt = 0.0;
+          }
+        }
+      }
+    } else if (v == 2) {
+      if (v1 == 0){//v1* 5 - 1 < v2) {
+        rslt = 0.0;
+      } else {
+        rslt = n2;
+      }
+    } else if (v == 3) {
+      if (v2 > 1) {
+        rslt = 0.0;
+      } else {
+        rslt = n3;
+      }
+    }
+    gl_FragColor = vec4(rslt,old.rgb);
+}
+</script> 
+ 
+<script id="shader-fs-show" type="x-shader/x-fragment"> 
+precision mediump float;
+  uniform sampler2D uTexSamp;
+  varying vec2 vTexCoord;
+  // uniform float ex;
+void main(void) {
+  vec4 old = texture2D(uTexSamp, vTexCoord);
+  int v =  int(old.r*16.0 + 0.5);
+  if (v == 1){
+    gl_FragColor = vec4(0.3,0.3,1.0,1.0);
+  } else if (v == 2) {
+    gl_FragColor = vec4(0.2,1.0,0.3,1.0);
+  } else if (v == 3) {
+    gl_FragColor = vec4(1.0,0.3,0.0,1.0);
+  } else {
+    gl_FragColor = vec4(0.0,0.0,0.0,1.0);
+  }
+}
+</script> 
+
+<script type="text/javascript">
+
+function getShader ( gl, id ){
+   var shaderScript = document.getElementById ( id );
+   var str = "";
+   var k = shaderScript.firstChild;
+   while ( k ){
+     if ( k.nodeType == 3 ) str += k.textContent;
+     k = k.nextSibling;
+   }
+   var shader;
+   if ( shaderScript.type == "x-shader/x-fragment" )
+           shader = gl.createShader ( gl.FRAGMENT_SHADER );
+   else if ( shaderScript.type == "x-shader/x-vertex" )
+           shader = gl.createShader(gl.VERTEX_SHADER);
+   else return null;
+   str = str.replace('[replacedx]', '1./'+cwidth+'.').replace('[replacedy]', '1./'+cheight+'.');
+   gl.shaderSource(shader, str);
+   gl.compileShader(shader);
+   if (gl.getShaderParameter(shader, gl.COMPILE_STATUS) == 0)
+      alert(gl.getShaderInfoLog(shader));
+   return shader;
+}
+
+var gl, prog, prog_show, FBO, FBO2, texture, texture2,
+    timer, delay = 50, it = 1, time;
+var cwidth,cheight;
+
+function main() {
+  initHash();
+   clearInterval(timer);
+   var c = document.getElementById("c");
+   
+   var cwidth0 = Math.ceil(window.innerWidth/3);
+   var cheight0 = Math.ceil(window.innerHeight/3);
+
+   cwidth = Math.pow(2, Math.ceil(Math.log2(cwidth0)));
+   cheight = Math.pow(2, Math.ceil(Math.log2(cheight0)));
+
+   var cwidth2 = cwidth0/2;
+   var cheight2 = cheight - cheight0/2;
+
+   c.width = cwidth;
+   c.height = cheight;
+   c.style.width = cwidth*3 + 'px';
+   c.style.height = cheight*3 + 'px';
+   try { gl = c.getContext("experimental-webgl", {depth : false } );
+   } catch(e) {}
+   if ( !gl ) {alert("Your browser does not support WebGL"); return;}
+
+   prog  = gl.createProgram();
+   gl.attachShader(prog, getShader( gl, "shader-vs" ));
+   gl.attachShader(prog, getShader( gl, "shader-fs" ));
+   gl.linkProgram(prog);
+   prog_show  = gl.createProgram();
+   gl.attachShader(prog_show, getShader( gl, "shader-vs" ));
+   gl.attachShader(prog_show, getShader( gl, "shader-fs-show" ));
+   gl.linkProgram(prog_show);
+
+   var posBuffer = gl.createBuffer();
+   gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+   var vertices = new Float32Array([-1,-1,0, 1,-1,0, -1,1,0, 1,1,0]);
+   var aPosLoc = gl.getAttribLocation(prog, "aPos");
+   gl.enableVertexAttribArray( aPosLoc );
+   var aTexLoc = gl.getAttribLocation(prog, "aTexCoord");
+   gl.enableVertexAttribArray( aTexLoc );
+   var texCoords = new Float32Array([0,0, 1,0, 0,1, 1,1]);
+   var texCoordOffset = vertices.byteLength;
+   gl.bufferData(gl.ARRAY_BUFFER,
+       texCoordOffset + texCoords.byteLength, gl.STATIC_DRAW);
+   gl.bufferSubData(gl.ARRAY_BUFFER, 0, vertices);
+   gl.bufferSubData(gl.ARRAY_BUFFER, texCoordOffset, texCoords);
+   gl.vertexAttribPointer(aPosLoc, 3, gl.FLOAT, gl.FALSE, 0, 0);
+   gl.vertexAttribPointer(aTexLoc, 2, gl.FLOAT, gl.FALSE, 0, texCoordOffset);
+
+   texture = gl.createTexture();
+   gl.bindTexture(gl.TEXTURE_2D, texture);
+   gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+   var pixels = [];
+   for(var i = 0; i<cheight; i++)
+     for(var j = 0; j<cwidth; j++)
+       if(Math.random() > 0.5){
+        var dx = j - cwidth2;
+        var dy = i - cheight2;
+        if (dx*dx+dy*dy < 130)
+          pixels.push( Math.random()*48, 0,0,0 ); 
+        else 
+          pixels.push( 0, 0,0,0 );
+       } else {
+         pixels.push( 0, 0,0,0 );
+       }
+
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, cwidth, cheight, 0, gl.RGBA,
+        gl.UNSIGNED_BYTE, new Uint8Array(pixels));
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+   texture2 = gl.createTexture();
+   gl.bindTexture(gl.TEXTURE_2D, texture2);
+   gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, cwidth, cheight, 0, gl.RGBA,
+        gl.UNSIGNED_BYTE, new Uint8Array(pixels));
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+   gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+   FBO = gl.createFramebuffer();
+   gl.bindFramebuffer(gl.FRAMEBUFFER, FBO);
+   gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0,
+       gl.TEXTURE_2D, texture, 0);
+   FBO2 = gl.createFramebuffer();
+   gl.bindFramebuffer(gl.FRAMEBUFFER, FBO2);
+   gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0,
+       gl.TEXTURE_2D, texture2, 0);
+
+
+   time = new Date().getTime();
+   anim();
+}
+function draw(){
+   gl.useProgram(prog);
+   if (it > 0){ 
+     gl.bindTexture(gl.TEXTURE_2D, texture);
+     gl.bindFramebuffer(gl.FRAMEBUFFER, FBO2);}
+   else{
+     gl.bindTexture(gl.TEXTURE_2D, texture2);
+     gl.bindFramebuffer(gl.FRAMEBUFFER, FBO);}
+   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+   gl.flush();
+   gl.useProgram(prog_show);
+   gl.bindFramebuffer(gl.FRAMEBUFFER, null);
+   gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+   it = -it; 
+}
+function anim(){
+   draw();
+   clearTimeout(timer);
+   if (delay == 1) {
+     timer = setTimeout(anim, delay);
+   } else {
+    timer = setTimeout("requestAnimationFrame(anim)", delay);
+   }
+}
+function initHash() {
+  var hash = document.location.hash.substr(1);
+  if (hash == 'noad') {
+  	document.querySelector('#menu').style.display='none';
+  	return;
+  }
+  var sp = parseInt(hash);
+  if (sp > 0) {
+    delay = sp;
+    var spid = '1'
+    if(sp <10){
+      spid = '7';
+    } else if(sp <30){
+      spid = '6';
+    } else if (sp < 100) {
+      spid = '5';
+    } else if (sp < 300) {
+      spid = '4';
+    } else if (sp < 700) {
+      spid = '3';
+    } else if (sp < 2000) {
+      spid = '2';
+    }
+    document.querySelector('#spd'+spid).checked = true;
+  }
+}
+function onHashChange() {
+  var sp = parseInt(document.location.hash.substr(1));
+  if (sp > 0) {
+    delay = sp;
+  }
+  anim();
+}
+setTimeout(main, 30);
+</script>
+
+<style type="text/css">
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color:white;
+    background: black;
+}
+a{
+  color: white;
+}
+  canvas {
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated;
+  }
+  #menu{
+   background: rgba(128,128,128,0.5); 
+   width: 300px;
+   position: absolute;
+   top:0;
+   right:0;
+   vertical-align: bottom;
+   opacity: 0.4;
+  }
+  #menumain{
+  padding: 8px;
+  font-size: 13px;
+  font-family: sans-serif;
+  }
+  #menu:hover{
+    opacity: 1;
+  }
+  span{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border:1px solid white;
+  }
+  .red{
+    background: rgb(255,76,0);
+  }
+  .blue{
+    background: rgb(76,76,255);
+  }
+  .black{
+    background: black;
+  }
+  .green{
+    background: rgb(52,255,76);
+  }
+  #closebtn{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    line-height: 0;
+  }
+</style>
+</head>
+<body onhashchange="onHashChange()">
+<canvas id="c"tyle="image-rendering: pixelated"></canvas>
+
+<div id='menu'>
+<div id='menumain'>
+<input type='button' value='X' id='closebtn' onclick="document.querySelector('#menu').style.display='none'" />
+<strong>speed</strong>:<br/>
+<input type='radio' name="spd" id='spd1' value='1' onclick="document.location.hash='4000'"><label for='spd1'>1</label>
+<input type='radio' name="spd" id='spd2' value='2' onclick="document.location.hash='1000'"><label for='spd2'>2</label>
+<input type='radio' name="spd" id='spd3' value='3' onclick="document.location.hash='500'"><label for='spd3'>3</label>
+<input type='radio' name="spd" id='spd4' value='4' onclick="document.location.hash='200'"><label for='spd4'>4</label>
+<input type='radio' name="spd" id='spd5' value='5' onclick="document.location.hash='50'" checked><label for='spd5'>5</label>
+<input type='radio' name="spd" id='spd6' value='6' onclick="document.location.hash='20'"><label for='spd6'>6</label>
+<input type='radio' name="spd" id='spd7' value='7' onclick="document.location.hash='1'"><label for='spd6'>7</label><br/>
+<strong>rules</strong>: pixel changes based on color count of <a href='http://en.wikipedia.org/wiki/Moore_neighborhood' target='_blank'>8 neighbers</a><br/>
+
+<span class='blue'></span> cytoplasm: slowly grow<br/>
+<span class='red'></span> cell wall: quickly grow around cytoplasm<br/>
+<span class='green'></span> virus: grow inside cytoplasm, destroy cell wall<br/>
+
+<span class='black'></span> / <span class='blue'></span> ⇒ <span class='green'></span> if <span class='green'></span> = 3 <br/>
+<span class='blue'></span> ⇒ <span class='black'></span> if <span class='green'></span> > 3 | <span class='blue'></span> = 0<br/>
+<span class='green'></span> ⇒ <span class='black'></span> if <span class='blue'></span> = 0<br/>
+<span class='red'></span> ⇒ <span class='black'></span> if <span class='green'></span> > 1<br/>
+<span class='black'></span> ⇒ <span class='red'></span> if <span class='red'></span> > 0 &amp; <span class='blue'></span> > 0 &amp; <span class='green'></span> = 0<br/>
+<span class='black'></span> ⇒ <span class='blue'></span> if <span class='blue'></span> = 3 | (3 > <span class='green'></span> > 0 &amp; <span class='blue'></span> > 0)<br/>
+</div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Cellular automaton -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-3283235194066083"
+     data-ad-slot="9095307850"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</body>
+</html>

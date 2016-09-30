@@ -574,9 +574,12 @@ aside a.link {
   margin: 5px 0;
   padding: 5px 5px 5px 30px;
   font-size: 16px;
-  border: #2e7ed5 solid 2px;
-  border-radius: 8px;
+  border: rgba(46,126,213,0.3) solid 1px;
 }
+aside a.link:hover {
+  border: rgba(46,126,213,0.5) solid 1px;
+}
+
 aside a.link > div {
   position: absolute;
   background-size: 20px 20px;

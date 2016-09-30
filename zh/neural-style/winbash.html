@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> 安装 Windows10 Linux子系统 </title>
+    <title> 安装 Windows10 Linux子系统 ( Ubuntu ) </title>
   </head>
 
   <body>
@@ -38,8 +38,10 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>安装 Windows10 Linux子系统</h2>
-  <p>这篇教程只适合最新版的Windows10系统，其他请参考<a href="virtualbox.html">VirtualBox下的Ubuntu</a>安装教程</p>
+  <h2>安装 Windows10 Linux子系统 ( Ubuntu )</h2>
+  <p>通过以下步骤来安装Windows 10的Linux子系统。完成以后就会有一个兼容Ubuntu的Bash终端。</p>
+
+<p>本页教程只适用于最新版的Win10。老版Windows或OSX其他请参考<a href="virtualbox.html">VirtualBox下的Ubuntu</a>安装教程</p>
 
 <h3 id="linux">启用Linux子系统</h3>
 
@@ -59,13 +61,15 @@
 
 <p>下载完成后会提示新建一个用户，输入用户名和密码。这个用户并不需要和windows用户一致</p>
 
-<p>完成后就可以，就可以进入下一步开始<a href="install.html">Neural Style的安装了</a></p>
+<p>完成后就可以进入下一步开始<a href="install.html">Neural Style的安装了</a></p>
 
-<h3 id="section">其他</h3>
+<!--
+### 其他
 
-<p>所有linux子系统的文件都位于这个windows隐藏目录下<code class="highlighter-rouge">%localappdata%\Lxss</code>，可以用资源管理器从这里把文件拷贝出来，但如果用资源管理器向这里写入文件可能会和linux的权限配置有冲突。</p>
+所有linux子系统的文件都位于这个windows隐藏目录下`%localappdata%\Lxss`，可以用资源管理器从这里把文件拷贝出来，但如果用资源管理器向这里写入文件可能会和linux的权限配置有冲突。
 
-<p>反过来，在linux子系统下，可以在<code class="highlighter-rouge">/mnt/</code>找到所有windows文件</p>
+反过来，在linux子系统下，可以在`/mnt/`找到所有windows文件
+-->
 
 
 
@@ -88,7 +92,7 @@
     Neural Style 教程
     <br/>
     <li><a href="/zh/neural-style/" >概要</a></li>
-    <li><a href="/zh/neural-style/virtualbox.html" >安装 Ubuntu</a></li>
+    <li><a href="/zh/neural-style/winbash.html" >安装Linux子系统</a></li>
     <li><a href="/zh/neural-style/install.html" >安装 Neural Style</a></li>
     <li><a href="/zh/neural-style/use.html" >生成图像</a></li>
   </ul>

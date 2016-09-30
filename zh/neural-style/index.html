@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Neural Style 教程 </title>
+    <title> Neural Style 使用教程 </title>
   </head>
 
   <body>
@@ -38,11 +38,39 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Neural Style 教程</h2>
-  <p><strong>Neural Style</strong>( 读作: 牛肉style ) 是一款基于<a href="http://arxiv.org/abs/1508.06576">神经网络</a>的智能图像合成软件。</p>
+  <h2>Neural Style 使用教程</h2>
+  <p><strong>Neural Style</strong>( 读作: 牛肉style ) 是一款基于神经网络的智能图像合成软件。</p>
 
-<p>输入一张内容图和一张材质图，Neural Style就能将两个图像混合成一个几乎完美的画作。</p>
+<p>输入一张内容图和一张材质图，Neural Style就能将两个图像混合成一个几乎完美的画作。图像合成网站<a href="http://ostagram.ru/static_pages/lenta?last_days=1000&amp;locale=en">Ostagram</a>的后台就是由Neural Style驱动。</p>
 
+<p><img src="images/cat.jpg" alt="" /></p>
+
+<h3 id="section">系统要求</h3>
+
+<p>Neural Style目前只支持Linux系统，但Windows 10用户也可以通过系统自带的Linux子系统安装 <br /> <a href="winbash.html">Linux子系统安装教程</a></p>
+
+<p>其他版本的Windows或OSX用户则需要<a href="virtualbox.html">借助虚拟机安装Linux</a></p>
+
+<h3 id="section-1">安装使用</h3>
+
+<p><a href="install.html">安装</a></p>
+
+<h3 id="section-2">版权说明</h3>
+
+<p>我并不是Neural Style的作者，只是做了一个Web服务器以方便使用。</p>
+
+<p>其中使用的技术都是开源和公开发表的：</p>
+<ul>
+  <li><a href="http://arxiv.org/abs/1508.06576">论文</a></li>
+  <li><a href="https://github.com/jcjohnson/neural-style">Neural Style原始网站</a></li>
+  <li><a href="http://caffe.berkeleyvision.org/">Caffee深度学习</a></li>
+</ul>
+
+<h3 id="section-3">显卡加速</h3>
+
+<p>默认安装使用CPU渲染图像，速度非常慢。通过Nvidia显卡加速可以获得几十倍的提速。目前教程还在编写和测试中，很快会有更新。。。</p>
+
+<p>另外教程的其他各部分也在不断完善中，如果需要的话可以关注我的微博来获取更新的消息。</p>
 
 
 </section>
@@ -64,7 +92,7 @@
     Neural Style 教程
     <br/>
     <li><a href="/zh/neural-style/" >概要</a></li>
-    <li><a href="/zh/neural-style/virtualbox.html" >安装 Ubuntu</a></li>
+    <li><a href="/zh/neural-style/winbash.html" >安装Linux子系统</a></li>
     <li><a href="/zh/neural-style/install.html" >安装 Neural Style</a></li>
     <li><a href="/zh/neural-style/use.html" >生成图像</a></li>
   </ul>
