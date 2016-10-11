@@ -39,19 +39,28 @@
       <div class="inner clearfix">
         <section id="main-content">
   <h2>安装 Neural Style</h2>
-  <p>在Ubuntu的终端里依次输入以下命令，运行每个命令时都有可能会停下来询问你的选择</p>
-<ul>
-  <li>如果提示<code class="highlighter-rouge">[yes/no]</code>， 就输<code class="highlighter-rouge">yes</code>回车，</li>
-  <li>如果提示<code class="highlighter-rouge">[Y/n]</code>就输入<code class="highlighter-rouge">Y</code>回车</li>
-  <li>如果提示<code class="highlighter-rouge">[sudo] password</code> 就输入管理员密码</li>
-</ul>
+  <h3 id="section">安装</h3>
+
+<p>在Ubuntu的终端里依次输入以下命令</p>
 
 <p>安装必要的编译工具</p>
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install build-essential
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+sudo apt-get install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
+</code></pre>
+</div>
 
-sudo apt-get install git
+<p>安装Dart<br />
+如果以下命令被墙 可以到这里下载安装包 <a href="https://github.com/rinick/sdk/releases/tag/1.20.0-dev.10.1">github.com/rinick/sdk/releases</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+sudo apt-get update
+sudo apt-get install apt-transport-https
 
-sudo apt-get install cmake
+sudo sh -c 'curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+
+sudo sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list &gt; /etc/apt/sources.list.d/dart_stable.list'
+sudo apt-get update
+
+sudo apt-get install dart
 </code></pre>
 </div>
 
@@ -71,18 +80,26 @@ source ~/.bashrc
 <p>安装caffee加载器</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>cd ~
 
-sudo apt-get install libprotobuf-dev protobuf-compiler
-
 luarocks install loadcaffe
 </code></pre>
 </div>
 
-<p>安装Neural Style</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/rinick/neural-style.git
+<p>安装Neural Style Server</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/rinick/neural-style-server.git --recursive
+cd ~/neural-style-server/neural-style
+sh ./models/download_models.sh
 
-cd neural-style
+cd ..
 
-sh models/download_models.sh
+/usr/lib/dart/bin/pub get
+/usr/lib/dart/bin/pub build
+</code></pre>
+</div>
+
+<h3 id="section-1">运行</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/neural-style-server
+sh run.sh
 </code></pre>
 </div>
 
@@ -103,12 +120,13 @@ sh models/download_models.sh
   <ul>
     <li><a href="/index.html" >首页</a></li>
     <br/>
-    Neural Style 教程
+    Neural Style服务器
     <br/>
     <li><a href="/zh/neural-style/" >概要</a></li>
-    <li><a href="/zh/neural-style/winbash.html" >安装Linux子系统</a></li>
-    <!--li><a href="/zh/neural-style/install.html" >安装 Neural Style</a></li-->
-    <li><a href="/zh/neural-style/use.html" >生成图像</a></li>
+    <!--li><a href="/zh/neural-style/winbash.html" >通过Linux子系统安装</a></li-->
+    <li><a href="/zh/neural-style/virtualbox.html" >安装</a></li>
+    <li><a href="/zh/neural-style/use.html" >使用说明</a></li>
+    <li><a href="/zh/neural-style/copyright.html" >版权声明</a></li>
   </ul>
   <!--p></p>
   <p></p>

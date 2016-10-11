@@ -41,7 +41,7 @@
   <h2>安装 Windows10 Linux子系统 ( Ubuntu )</h2>
   <p>通过以下步骤来安装Windows 10的Linux子系统。完成以后就会有一个兼容Ubuntu的Bash终端。</p>
 
-<p>本页教程只适用于最新版的Win10。老版Windows或OSX其他请参考<a href="virtualbox.html">VirtualBox下的Ubuntu</a>安装教程</p>
+<p>本页教程只适用于最新版的Win10。老版Windows或OSX系统请使用<a href="virtualbox.html">VirtualBox镜像</a></p>
 
 <h3 id="linux">启用Linux子系统</h3>
 
@@ -53,15 +53,44 @@
 
 <p><img src="images/win10_feature.png" alt="" /></p>
 
-<p>重启后，在windows搜索里，已经可以搜索到Bash</p>
+<p>重启后，开启powershell终端，在终端里输入“bash”回车</p>
 
-<p><img src="images/win10_search.png" alt="" /></p>
+<p><img src="images/powershell.png" alt="" /></p>
 
-<p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="highlighter-rouge">y</code>回车就会开始下载</p>
+<p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="highlighter-rouge">y</code>回车就会开始下载<br />
+下载完成后需要几分钟时间解压，解压完以后按下回车会提示新建linux用户名，再输入两次密码<br />
+如果是中文系统的话这里可能会出现乱码，但不影响之后的使用</p>
 
-<p>下载完成后会提示新建一个用户，输入用户名和密码。这个用户并不需要和windows用户一致</p>
+<p><img src="images/bash_install.png" alt="" /></p>
 
-<p>完成后就可以进入下一步开始<a href="install.html">Neural Style的安装了</a></p>
+<h3 id="neural-style">安装Neural Style服务</h3>
+
+<p>接着逐行复制以下命令到bash终端，整个过程需要下载1GB以上的数据</p>
+
+<p>运行的过程中有几处会提示输入密码</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~
+
+sudo apt-get update; sudo apt-get -y install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
+
+curl -s https://raw.githubusercontent.com/rinick/neural-style-server/master/install_torch.sh | bash
+
+source ~/.bashrc
+
+curl -s https://raw.githubusercontent.com/rinick/neural-style-server/master/install_server.sh | bash
+</code></pre>
+</div>
+
+<p>熟悉Linux的用户也可以无视上面的步骤<a href="install.html">自行安装需要的模块</a></p>
+
+<h3 id="neural-style-1">运行Neural Style服务</h3>
+
+<p>在bash终端输入</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd neural-style-server
+sh run.sh
+</code></pre>
+</div>
 
 <!--
 ### 其他
@@ -89,12 +118,13 @@
   <ul>
     <li><a href="/index.html" >首页</a></li>
     <br/>
-    Neural Style 教程
+    Neural Style服务器
     <br/>
     <li><a href="/zh/neural-style/" >概要</a></li>
-    <li><a href="/zh/neural-style/winbash.html" >安装Linux子系统</a></li>
-    <!--li><a href="/zh/neural-style/install.html" >安装 Neural Style</a></li-->
-    <li><a href="/zh/neural-style/use.html" >生成图像</a></li>
+    <!--li><a href="/zh/neural-style/winbash.html" >通过Linux子系统安装</a></li-->
+    <li><a href="/zh/neural-style/virtualbox.html" >安装</a></li>
+    <li><a href="/zh/neural-style/use.html" >使用说明</a></li>
+    <li><a href="/zh/neural-style/copyright.html" >版权声明</a></li>
   </ul>
   <!--p></p>
   <p></p>

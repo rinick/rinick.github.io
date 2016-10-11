@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> 使用预安装的VirtualBox镜像 </title>
+    <title> Neural Style服务器 </title>
   </head>
 
   <body>
@@ -38,53 +38,25 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>使用预安装的VirtualBox镜像</h2>
-  <h3 id="section">下载</h3>
+  <h2>Neural Style服务器</h2>
+  <h3 id="section">图像版权</h3>
 
-<p>首先下载<strong>VirtualBox安装文件</strong></p>
+<p>样式素材图和内容素材图一样，都影响合成图的版权。<br />
+请不要因为合成图不容易直接判断来自什么样式素材，就忽略了样式素材图的版权问题！</p>
 
-<p>Windows系统:<br />
-<a href="http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-Win.exe">http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-Win.exe</a></p>
+<p>如果需要商用，最好选一些开放版权的图，比如<a href="https://www.wikiart.org/en/paintings-by-style/post-impressionism?select=featured">wikiart</a>（点wikiart网页顶部的artworks菜单里可以选择其他的艺术流派）</p>
 
-<p>OSX系统:<br />
-<a href="http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-OSX.dmg">http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-OSX.dmg</a></p>
+<h3 id="section-1">软件版权</h3>
 
-<p>还需要下载预安装Ubuntu的<strong>VirtualBox镜像文件</strong>:<br />
-<a href="https://github.com/rinick/neural-style-server/releases/download/0.1.0/neural-style-server_virtualbox.torrent">https://github.com/rinick/neural-style-server/releases/download/0.1.0/neural-style-server_virtualbox.torrent</a></p>
+<p>本软件仅是一个方便调用Neural Style工具的Web服务器。在<a href="https://en.wikipedia.org/wiki/Apache_License">Apache 2.0许可</a>下开源，可以免费使用</p>
 
-<h3 id="virtualbox">安装VirtualBox</h3>
+<p>其中调用的Neural Style命令行工具及其使用的技术也都是开源和公开发表的：</p>
+<ul>
+  <li><a href="http://arxiv.org/abs/1508.06576">论文</a></li>
+  <li><a href="https://github.com/jcjohnson/neural-style">Neural Style原始网站</a></li>
+  <li><a href="http://caffe.berkeleyvision.org/">Caffee深度学习</a></li>
+</ul>
 
-<p>运行VirtualBox-5.1.6-110634-Win.exe之后一路点next就可以了。</p>
-
-<p><img src="images/vb_install.png" alt="" /></p>
-
-<p>安装以后，如果有需要，可以切换到中文</p>
-
-<p>菜单 File - Preferences</p>
-
-<p><img src="images/vb_zh1.png" alt="" /></p>
-
-<p>选择Language</p>
-
-<p><img src="images/vb_zh2.png" alt="" /></p>
-
-<p>管理，导入虚拟电脑</p>
-
-<p><img src="images/vb_import.png" alt="" /></p>
-
-<p>选中NeuralStyleServer.ova文件，生成一个新的虚拟机</p>
-
-<p><img src="images/vb_config.png" alt="" /></p>
-
-<p>右键进入设置，改一下cpu和内存，给虚拟机的cpu越多越好</p>
-
-<p><img src="images/vb_config_cpu.png" alt="" /></p>
-
-<p>随后启动虚拟机 （点击绿色箭头）</p>
-
-<p>启动过程不需要任何干预，虚拟机会自动登陆并启动Neural Style服务器</p>
-
-<p>接下来就可以<a href="use.html">使用网页界面生成图像</a>了</p>
 
 
 </section>
