@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Neural Style服务器 </title>
+    <title> GPU加速运算 </title>
   </head>
 
   <body>
@@ -38,34 +38,20 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Neural Style服务器</h2>
-  <p><strong>Neural Style</strong>是一款基于神经网络的智能图像合成软件。</p>
+  <h2>GPU加速运算</h2>
+  <p>GPU加速的支持目前还在开发中。将会尽快更新。</p>
 
-<p>输入一张内容图和一张材质图，Neural Style就能将两个图像混合成一个几乎完美的画作。图像合成网站<a href="http://ostagram.ru/static_pages/lenta?last_days=1000&amp;locale=en">Ostagram</a>的后台就是由Neural Style驱动。</p>
+<h3 id="section">系统要求</h3>
 
-<p><img src="images/cat.jpg" alt="" /></p>
+<ul>
+  <li>原生Linux系统，最好是Ubuntu 14.04。不支持Ubuntu16之后的版本
+    <ul>
+      <li>不能是虚拟机，必须是主系统 （或是windows/linux双启动）</li>
+    </ul>
+  </li>
+  <li>一块支持CUDA的独立Nvidia显卡 （如果可能也会尽快支持其他兼容OpenCL的显卡）</li>
+</ul>
 
-<h3 id="section">命令行与服务器</h3>
-
-<p>Neural Style是一个Linux下命令行工具（<a href="https://github.com/jcjohnson/neural-style">作者：Justin Johnson</a>）</p>
-
-<p>Neural Style服务器则为命令行工具提供了一个基本的web图形界面，方便操作</p>
-
-<h3 id="section-1">安装</h3>
-
-<p>Neural Style目前只支持Linux系统，如果熟悉Ubuntu的话可以<a href="install.html">直接在Ubunut安装</a></p>
-
-<p>其他用户也可以使用<a href="virtualbox.html">预安装Ubuntu的VirtualBox镜像</a></p>
-
-<h3 id="section-2">显卡加速</h3>
-
-<p>默认安装使用CPU渲染图像，速度非常慢。通过<a href="gpu.html">Nvidia显卡加速</a>可以获得几十倍的提速。目前对gpu的支持还在编写和测试中，很快会有更新。。。</p>
-
-<h3 id="section-3">交流</h3>
-
-<p>软件和使用说明还在不断完善中，如果需要的话可以关注我的微博来获取更新的消息。</p>
-
-<p>另外也欢迎<a href="bearychat.html">在线交流</a></p>
 
 
 </section>
@@ -84,13 +70,13 @@
   <ul>
     <li><a href="/index.html" >首页</a></li>
     <br/>
-    Neural Style服务器
+    深度熔合
     <br/>
-    <li><a href="/zh/neural-style/" >概要</a></li>
-    <!--li><a href="/zh/neural-style/winbash.html" >通过Linux子系统安装</a></li-->
-    <li><a href="/zh/neural-style/virtualbox.html" >安装</a></li>
-    <li><a href="/zh/neural-style/use.html" >使用说明</a></li>
-    <li><a href="/zh/neural-style/copyright.html" >版权声明</a></li>
+    <li><a href="/zh/deep-fuse/" >概要</a></li>
+    <!--li><a href="/zh/deep-fuse/winbash.html" >通过Linux子系统安装</a></li-->
+    <li><a href="/zh/deep-fuse/virtualbox.html" >安装</a></li>
+    <li><a href="/zh/deep-fuse/use.html" >使用说明</a></li>
+    <li><a href="/zh/deep-fuse/copyright.html" >版权声明</a></li>
   </ul>
   <!--p></p>
   <p></p>

@@ -49,8 +49,8 @@
 <p>OSX系统:<br />
 <a href="http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-OSX.dmg">http://download.virtualbox.org/virtualbox/5.1.6/VirtualBox-5.1.6-110634-OSX.dmg</a></p>
 
-<p>还需要下载预安装Ubuntu的<strong>VirtualBox镜像文件</strong>:<br />
-<a href="https://github.com/rinick/neural-style-server/releases/download/0.1.0/neural-style-server_virtualbox.torrent">https://github.com/rinick/neural-style-server/releases/download/0.1.0/neural-style-server_virtualbox.torrent</a></p>
+<p>还需要下载预安装Ubuntu的<strong>VirtualBox镜像文件</strong> （2.3G）:<br />
+<a href="https://github.com/rinick/deep-fuse/releases/download/0.1.0/deep-fuse_virtualbox.torrent">https://github.com/rinick/deep-fuse/releases/download/0.1.0/deep-fuse_virtualbox.torrent</a></p>
 
 <h3 id="virtualbox">安装VirtualBox</h3>
 
@@ -68,21 +68,33 @@
 
 <p><img src="images/vb_zh2.png" alt="" /></p>
 
-<p>管理，导入虚拟电脑</p>
+<p><strong>创建一个虚拟本地网络</strong></p>
+
+<p>菜单选择 管理 - 全局设定 - 网络 - 仅主机网络 - 添加一个新的网络</p>
+
+<p><img src="images/vb_global_network.png" alt="" /></p>
+
+<p>管理，<strong>导入虚拟电脑</strong></p>
 
 <p><img src="images/vb_import.png" alt="" /></p>
 
-<p>选中NeuralStyleServer.ova文件，生成一个新的虚拟机</p>
+<p>选中DeepFuse.ova文件，生成一个新的虚拟机</p>
 
 <p><img src="images/vb_config.png" alt="" /></p>
 
-<p>右键进入设置，改一下cpu和内存，给虚拟机的cpu越多越好</p>
+<p>右键进入设置，<strong>改一下cpu和内存</strong>，给虚拟机的cpu越多越好</p>
 
 <p><img src="images/vb_config_cpu.png" alt="" /></p>
 
-<p>随后启动虚拟机 （点击绿色箭头）</p>
+<p>再确认网络设置选中了刚才创建的虚拟网络</p>
 
-<p>启动过程不需要任何干预，虚拟机会自动登陆并启动Neural Style服务器</p>
+<p><img src="images/vb_config_network.png" alt="" /></p>
+
+<p>随后<strong>启动虚拟机</strong></p>
+
+<p><img src="images/vb_start.png" alt="" /></p>
+
+<p>启动后不需要任何干预，虚拟机会自动登陆并启动深度熔合服务器</p>
 
 <p>接下来就可以<a href="use.html">使用网页界面生成图像</a>了</p>
 
@@ -103,13 +115,13 @@
   <ul>
     <li><a href="/index.html" >首页</a></li>
     <br/>
-    Neural Style服务器
+    深度熔合
     <br/>
-    <li><a href="/zh/neural-style/" >概要</a></li>
-    <!--li><a href="/zh/neural-style/winbash.html" >通过Linux子系统安装</a></li-->
-    <li><a href="/zh/neural-style/virtualbox.html" >安装</a></li>
-    <li><a href="/zh/neural-style/use.html" >使用说明</a></li>
-    <li><a href="/zh/neural-style/copyright.html" >版权声明</a></li>
+    <li><a href="/zh/deep-fuse/" >概要</a></li>
+    <!--li><a href="/zh/deep-fuse/winbash.html" >通过Linux子系统安装</a></li-->
+    <li><a href="/zh/deep-fuse/virtualbox.html" >安装</a></li>
+    <li><a href="/zh/deep-fuse/use.html" >使用说明</a></li>
+    <li><a href="/zh/deep-fuse/copyright.html" >版权声明</a></li>
   </ul>
   <!--p></p>
   <p></p>
