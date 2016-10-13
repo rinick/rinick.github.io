@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> 安装 Windows10 Linux子系统 ( Ubuntu ) </title>
+    <title> 通过Windows 10 Linux子系统安装 </title>
   </head>
 
   <body>
@@ -38,10 +38,10 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>安装 Windows10 Linux子系统 ( Ubuntu )</h2>
+  <h2>通过Windows 10 Linux子系统安装</h2>
   <p>通过以下步骤来安装Windows 10的Linux子系统。完成以后就会有一个兼容Ubuntu的Bash终端。</p>
 
-<p>本页教程只适用于最新版的Win10。老版Windows或OSX系统请使用<a href="virtualbox.html">VirtualBox镜像</a></p>
+<p>本页教程<strong><span style="color:red">只适用于最新版的Windows 10</span></strong>。老版Windows或OSX系统请使用<a href="virtualbox.html">VirtualBox镜像</a></p>
 
 <h3 id="linux">启用Linux子系统</h3>
 
@@ -58,7 +58,7 @@
 <p><img src="images/powershell.png" alt="" /></p>
 
 <p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="highlighter-rouge">y</code>回车就会开始下载<br />
-下载完成后需要几分钟时间解压，解压完以后按下回车会提示新建linux用户名，再输入两次密码<br />
+下载完成后需要几分钟时间解压，解压完以提示新建linux用户名，再输入两次密码<br />
 如果是中文系统的话这里可能会出现乱码，但不影响之后的使用</p>
 
 <p><img src="images/bash_install.png" alt="" /></p>
@@ -71,26 +71,32 @@
 
 <div class="highlighter-rouge"><pre class="highlight"><code>cd ~
 
-sudo apt-get update; sudo apt-get -y install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
+sudo apt-get update; sudo apt-get -y upgrade; sudo apt-get -y install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
 
 curl -s https://raw.githubusercontent.com/rinick/deep-fuse/master/install_torch.sh | bash
 
 source ~/.bashrc
 
-curl -s https://raw.githubusercontent.com/rinick/deep-fuse/master/install_server.sh | bash
+curl -s https://raw.githubusercontent.com/rinick/deep-fuse/master/install_win_bash.sh | bash
 </code></pre>
 </div>
 
-<p>熟悉Linux的用户也可以无视上面的步骤<a href="install.html">自行安装需要的模块</a></p>
+<p>熟悉Linux的用户也可以<a href="install.html">自行安装需要的模块</a></p>
 
 <h3 id="section-1">运行</h3>
 
 <p>在bash终端输入</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd deep-fuse
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/deep-fuse
 sh run.sh
 </code></pre>
 </div>
+
+<h3 id="section-2">已知问题</h3>
+
+<p>由于<a href="https://github.com/Microsoft/BashOnWindows/issues/616">这个Windows的Bug</a>，上传图像可能会卡住。暂时只能等微软的补丁来修复这些问题。</p>
+
+<p>如果点击开始合成之后，超过30秒页面都没有更新，可以进入命令行<code class="highlighter-rouge">Ctrl+C</code>终止任务，在重新<code class="highlighter-rouge">sh run.sh</code>运行</p>
 
 <!--
 ### 其他
@@ -122,7 +128,7 @@ sh run.sh
     <br/>
     <li><a href="/zh/deep-fuse/" >概要</a></li>
     <!--li><a href="/zh/deep-fuse/winbash.html" >通过Linux子系统安装</a></li-->
-    <li><a href="/zh/deep-fuse/virtualbox.html" >安装</a></li>
+    <li><a href="/zh/deep-fuse/winbash.html" >安装</a></li>
     <li><a href="/zh/deep-fuse/use.html" >使用说明</a></li>
     <li><a href="/zh/deep-fuse/copyright.html" >版权声明</a></li>
   </ul>
