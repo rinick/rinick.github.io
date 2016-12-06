@@ -23,12 +23,12 @@ precision mediump float;
   const float dx=[replacedx], dy=[replacedy], st = 1./255.5;
 
   const float nn = 16.;
-  const float n1 = 1./nn;
-  const float n2 = n1 * 2.0;
-  const float n3 = n1 * 3.0;
-  int v1; // cytoplasm
-  int v2; // virus
-  int v3; // wall
+  const float n1 = 0.0625;
+  const float n2 = 0.125;
+  const float n3 = 0.1875;
+  int v1 = 0; // cytoplasm
+  int v2 = 0; // virus
+  int v3 = 0; // wall
   void countP(vec2 pt){
     vec4 c = texture2D(uTexSamp, pt);
     float v = c.r*nn;
