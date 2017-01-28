@@ -39,7 +39,16 @@
       <div class="inner clearfix">
         <section id="main-content">
   <h2>Unicode颜文字兼容表</h2>
-  <table id="mainTable">
+  <ul>
+  <li>本地： 当前浏览器直接渲染</li>
+  <li>字符： 纯文本模式下的渲染 （Windows10 IE）</li>
+  <li>微软： Windows10 系统下Chrome和Firefox等浏览器</li>
+  <li>苹果： 苹果IOS和OSX系统</li>
+  <li>谷歌： 安卓和chrome OS</li>
+  <li>三星： 三星手机</li>
+</ul>
+
+<table id="mainTable">
 	<style type="text/css">
 		table tr:nth-child(2n){
 			background: white;
@@ -47,8 +56,17 @@
 		table th, table td {
 			padding: 2px;
 			min-width:0;
+			position: relative;
 		}
-
+		input {
+			width:90%;
+			height:90%;
+			top:0;
+			left:0;
+			font-size:28px;
+			padding: 0;
+			position:absolute;
+		}
 	</style>
 	 <tr>
 	 </tr>
@@ -100,6 +118,10 @@ for (var i = 0; i < skip.length; ++i) {
 	}
 }
 	var table = document.querySelector('#mainTable');
+
+	var input = document.createElement('input');
+
+
 	var rowpos = 0;
 	var row = 0;
 	
@@ -112,9 +134,22 @@ for (var i = 0; i < skip.length; ++i) {
 		tr.innerHTML = '<th>本地</th><th>黑白</th><th>微软</th><th>苹果</th><th>谷歌</th><th>三星</th>';
 	}
 
+	function onTdClick(e) {
+		if (e.target == input) return;
+		var td = e.currentTarget;
+		console.log(td);
+		var tr = td.parentElement;
+		console.log(tr.children[0]);
+		console.log(tr.children[0].children);
+		var txt = tr.children[0].children[0].innerText;
+		input.value = txt;
+		td.appendChild(input);
+		input.select();
+	}
 	function addCell(tr) {
 		var div =document.createElement('div');
 		var td = document.createElement('td');
+		td.addEventListener('click',onTdClick);
 		div.style.margin='auto';
 		td.appendChild(div);
 		tr.appendChild(td);
@@ -218,6 +253,8 @@ for (var i = 0; i < flags.length; ++i) {
 
 //]]>
 </script>
+
+
 
 </section>
 
