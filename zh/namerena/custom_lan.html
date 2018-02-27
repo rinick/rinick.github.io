@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title> 自定义语言 </title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h2 class="innerTitle">名字竞技场</h2>
+        
+      </div>
+      <div class="ad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-3283235194066083"
+     data-ad-slot="1387164256"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          
+          <h2>自定义语言</h2>
+
+<p>名字竞技场默认语言是中文。但是可以自己设定文字，使用其他语言，甚至可以完全改变游戏显示的内容。</p>
+
+<h4 id="section">改变语言：</h4>
+
+<ul>
+  <li>英文版：<a href="http://namerena.github.io/?l=lang%2Fen.json">/?l=lang%2Fen.json</a></li>
+  <li>繁体中文：<a href="http://namerena.github.io/?l=lang%2Fzh-TW.json">/?l=lang%2Fzh-TW.json</a></li>
+</ul>
+
+<h4 id="section-1">改变内容：</h4>
+
+<ul>
+  <li>大富翁：<a href="http://namerena.github.io/?l=lang%2Fzh-money.json">/#l=lang%2zh-money.json</a> <br />
+用金币代替生命值，如果不喜欢打打杀杀，推荐试一下大富翁语言包。</li>
+</ul>
+
+<h5 id="section-2">大富翁语言包 战斗过程示例</h5>
+
+<p><img src="images/lan_demo_money.png" style="zoom:50%" /></p>
+
+<h5 id="section-3">对比普通版</h5>
+
+<p><img src="images/lan_demo_zh.png" style="zoom:50%" /></p>
+
+<h3 id="section-4">创建自己的语言包</h3>
+
+<ul>
+  <li>首先下载默认的语言文件：<a href="http://namerena.github.io/lang/zh.json" download="">/lang/zh.json</a></li>
+  <li>用UTF8编码打开语言文件，编辑语言，再以UTF8保存。</li>
+  <li>上传语言文件到某个网站，请确保该网站返回正确的 <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS头文件</a>
+    <ul>
+      <li>如果没有自己网站，可以到 <a href="https://pages.github.com/" target="_blank">Github Page</a> 免费建站</li>
+    </ul>
+  </li>
+  <li>把json文件的网址输入下面的输入框，点击 <button onclick="openUrl()">生成链接</button></li>
+</ul>
+
+<script>
+function openUrl(){
+	var input = document.querySelector("#urlinput").value;
+	var url = "http://namerena.github.io/?l=" + input.replace(/:/g,'%3A').replace(/\//g,'%2F').replace(/&/g,'%26').replace(/\?/g,'%3F');
+	window.open(url, "_blank");
+}
+</script>
+
+<p><input style="width:100%" id="urlinput" /></p>
+
+
+
+        </section>
+
+        <aside id="sidebar">
+          <a href="/namerena/" class="button" target="_blank">
+            <small>名字竞技场</small>
+            进入游戏
+          </a>
+
+          <a href="http://www.weibo.com/rinick" class="link" target="_blank">
+            <div style="background-image: url(http://weibo.com/favicon.ico);"></div>
+            我的微博
+          </a>
+          <a href="https://github.com/rinick" class="link" target="_blank">
+            <div style="background-image: url(https://github.com/favicon.ico);"></div>
+            GitHub
+          </a>
+
+        <ul>
+
+          <li><a href="http://www.deepmess.com/" >首页</a></li>
+          <br/>
+          <li><a href="index.html" >名字竞技场</a></li>
+          <br/>
+          <li><a href="naming.html" >命名规则</a></li>
+          <li><a href="attribute.html" >属性说明</a></li>
+          <li><a href="skill.html" >技能列表</a></li>
+          <li><a href="special.html" >特殊名字</a></li>
+          <li><a href="testing.html" >测号技巧</a></li>
+          <li><a href="custom_lan.html" >语言包</a></li>
+          <li><a href="about.html" >关于</a></li>
+        </ul>
+
+
+        </aside>
+      </div>
+    </div>
+
+  </body>
+</html>
