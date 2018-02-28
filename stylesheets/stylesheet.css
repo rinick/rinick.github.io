@@ -500,10 +500,10 @@ header h2 {
   top:0;
   right:0;
   width:66%;
-  min-width:320px;
   max-width:1024px;
   text-align:right;
   height:100px;
+  overflow: hidden;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat;
 }
 
@@ -881,7 +881,7 @@ dl dd {
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-  header h2 {
+/*  header h2 {
     display:none;
-  }
+  }*/
 }
