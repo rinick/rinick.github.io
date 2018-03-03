@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Rinick's Deep Mess </title>
+    <title> Hashdown </title>
   </head>
 
   <body>
@@ -38,25 +38,52 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Rinick's Deep Mess</h2>
-  <hr />
+  <h2>Hashdown</h2>
+  <h2 id="password">Password</h2>
 
-<table>
-  <tbody>
-    <tr>
-      <td><a href="https://namerena.github.io/en.html"><img src="/images/icon/namerena.png" alt="" /></a></td>
-      <td><a href="https://namerena.github.io/en.html">Namerena</a> <br /> A Text based fighting game, game result is determined by input names.</td>
-    </tr>
-    <tr>
-      <td><a href="/en/hashdown/"><img src="/images/icon/hashdown.png" alt="" /></a></td>
-      <td><a href="/en/hashdown/">Hashdown</a> <br /> Text encoding and compression tool for special purposes.</td>
-    </tr>
-    <tr>
-      <td><a href="/ca/virus.html"><img src="/images/icon/virus.png" alt="" /></a></td>
-      <td><a href="/ca/virus.html">Virus CA</a> <br /> A four states cellular automation system made with GLSL</td>
-    </tr>
-  </tbody>
-</table>
+<p>When you use password in <a href="index.html">Hashdown</a>’s password editor, the same password is required to decode.</p>
+
+<h3 id="special-password">Special Password</h3>
+
+<p>When the following special password is used, the data won’t be protected by the password:</p>
+
+<ul>
+  <li><strong>0</strong>
+    <ul>
+      <li>When password is <code class="highlighter-rouge">0</code>, the output is forced to use raw UTF8 without compression or encryption</li>
+    </ul>
+  </li>
+  <li><strong>1</strong>
+    <ul>
+      <li>When password is <code class="highlighter-rouge">1</code>, a one byte salt is used, and there will be 256 different possible outputs</li>
+    </ul>
+  </li>
+  <li><strong>4</strong>
+    <ul>
+      <li>When password is <code class="highlighter-rouge">4</code>, a 4 byte salt is used, and there will be 4294967296 different possible outputs</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="markdown">Markdown</h2>
+
+<p>Markdown is a makrup language that can easily convert text to html</p>
+
+<p>Markdown example： <a href="https://hashdown.github.io/edit.html#markdown_basis.md">markdown_basis.md</a></p>
+
+<p>use raw html inside Marddown: <a href="https://hashdown.github.io/edit.html#markdown_style.md">markdown_style.md</a></p>
+
+<h3 id="editing-mode">Editing Mode</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">A</code> : Plain Text</li>
+  <li><code class="highlighter-rouge">#</code> : Markdown Preview</li>
+  <li><code class="highlighter-rouge">A|#</code> : Markdown Editor，Text and Rendered Markdown are shown side by side
+    <ul>
+      <li>Click the <code class="highlighter-rouge">A|#</code> Button multiple times will switch to pure editing mode, and the encoded data area is hidden to give more editing space</li>
+    </ul>
+  </li>
+</ul>
 
 
 </section>
