@@ -56,6 +56,11 @@
   </thead>
   <tbody>
     <tr>
+      <td>Braillnary</td>
+      <td>output binary dots</td>
+      <td>⡯⡯⡯⠺⡢⡣⡣⡤⡳⡣⡭⡭⠺⡩⡻⡳</td>
+    </tr>
+    <tr>
       <td>Link</td>
       <td>directly open the decoded result</td>
       <td><a href="https://hashdown.github.io/#GMgIv-_0GTC7iTBH4gyek93I">https://hashdown.github.io/#GMgIv-_0GTC7iTBH4gyek93I</a></td>
@@ -64,11 +69,6 @@
       <td>Base2e15</td>
       <td>minimal output characters</td>
       <td>炅땯腖귻㟫䩍븀묓歊</td>
-    </tr>
-    <tr>
-      <td>Braillnary</td>
-      <td>output binary dots</td>
-      <td>⡯⡯⡯⠺⡢⡣⡣⡤⡳⡣⡭⡭⠺⡩⡻⡳</td>
     </tr>
     <tr>
       <td>TadpoleCode</td>
@@ -84,28 +84,6 @@
 </table>
 
 <p>It supports 5 different encoding modes</p>
-
-<h2 id="hashdown-link">Hashdown Link</h2>
-
-<p>Hashdown link convert text into url hash, so you can open the link directly without the extra step to open a decoder</p>
-
-<p>Example:
-https://hashdown.github.io/#SGFzaERvd24gTGluayBpcyBBd2Vzb21l</p>
-
-<ul>
-  <li>The encoding and decoding are 100% done in client side javascript, our server never know your text. the url hash (what’s after #) is never sent to the network.</li>
-  <li>When the server is down, you can still decode the content from the url if you can find any Hashdown mirror site or an offline version of Hashdown tool.</li>
-  <li>You can also use a password to protect your content.</li>
-</ul>
-
-<h2 id="base2e15">Base2e15</h2>
-
-<p><a href="https://github.com/rinick/base2e15">Base2e15</a> convert text to unicode characters, each unicode character represents 15 bits of data.</p>
-
-<p>Since Hashdown supports compression, it allows you to store more data in limited number of characters</p>
-
-<h2 id="tadpole-code">Tadpole Code</h2>
-<p>Tadpole Code convert text to unicode combining characters, which is able to combine everything into “single” character.</p>
 
 <h2 id="braillnary">Braillnary</h2>
 
@@ -139,6 +117,28 @@ https://hashdown.github.io/#SGFzaERvd24gTGluayBpcyBBd2Vzb21l</p>
     </tr>
   </tbody>
 </table>
+
+<h2 id="hashdown-link">Hashdown Link</h2>
+
+<p>Hashdown link convert text into url hash, so you can open the link directly without the extra step to open a decoder</p>
+
+<p>Example:
+https://hashdown.github.io/#SGFzaERvd24gTGluayBpcyBBd2Vzb21l</p>
+
+<ul>
+  <li>The encoding and decoding are 100% done in client side javascript, our server never know your text. the url hash (what’s after #) is never sent to the network.</li>
+  <li>When the server is down, you can still decode the content from the url if you can find any Hashdown mirror site or an offline version of Hashdown tool.</li>
+  <li>You can also use a password to protect your content.</li>
+</ul>
+
+<h2 id="base2e15">Base2e15</h2>
+
+<p><a href="https://github.com/rinick/base2e15">Base2e15</a> convert text to unicode characters, each unicode character represents 15 bits of data.</p>
+
+<p>Since Hashdown supports compression, it allows you to store more data in limited number of characters</p>
+
+<h2 id="tadpole-code">Tadpole Code</h2>
+<p>Tadpole Code convert text to unicode combining characters, which is able to combine everything into “single” character.</p>
 
 <h2 id="shadow-code">Shadow Code</h2>
 <p>Shadow Code convert text to ASCII control code, which is invisible in most browsers.</p>
