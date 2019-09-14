@@ -466,6 +466,8 @@ header {
   height: 20px;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat;
   border-bottom: solid 1px #275da1;
+  position: relative;
+  overflow: hidden;
 }
 
 header h1 {
