@@ -49,7 +49,7 @@ min-height: 150px;
 function run(){
 	var names = document.querySelector('textarea').value;
 	var base64 = window.btoa(unescape(encodeURIComponent(names))).replace(/\+/g,'-').replace(/\//g,'_');
-	document.querySelector('iframe').src = 'http://127.0.0.1:3030/md5/web/index.html#n=' + base64;
+	document.querySelector('iframe').src = '/namerena/index.html#n=' + base64;
 }
 function onMessage(e) {
 	console.log(JSON.stringify(e.data, null, ' '));
