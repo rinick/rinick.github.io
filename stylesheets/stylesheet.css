@@ -496,6 +496,9 @@ header h2 {
   position: relative;
   width: 940px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .ad {
   position: absolute;
@@ -780,6 +783,13 @@ dl dd {
 
 /* #Media Queries
 ================================================== */
+
+@media only screen and (min-width: 960px) {
+  header {
+    height: 170px;
+  }
+
+}
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) { }
