@@ -443,11 +443,9 @@ body {
   line-height: 1.5;
   color: #666;
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
-}
-
-* {
   font-family: "Microsoft YaHei", Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
+
 
 p {
   margin-top: 0;
