@@ -461,9 +461,10 @@ a:hover {
 }
 
 header {
+  box-sizing: border-box;
   padding-top: 40px;
   padding-bottom: 40px;
-  height: 20px;
+  height: 101px;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat;
   border-bottom: solid 1px #275da1;
   position: relative;
@@ -786,7 +787,7 @@ dl dd {
 
 @media only screen and (min-width: 960px) {
   header {
-    height: 170px;
+    height: 250px;
   }
 
 }
