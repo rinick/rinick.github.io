@@ -443,7 +443,7 @@ body {
   line-height: 1.5;
   color: #666;
   background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
-  font-family: "Microsoft YaHei", Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', Roboto,  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',  'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 
@@ -540,6 +540,11 @@ aside#sidebar p.repo-owner a {
   margin-top:24px;
   font-weight: bold;
 }
+
+aside#sidebar * {
+  box-sizing: content-box;
+}
+
 
 #downloads {
   margin-bottom: 40px;
