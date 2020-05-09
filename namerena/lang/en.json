@@ -99,7 +99,7 @@
 "win": "[2] win",
 "minionDie": "[1] disappears",
 "damage": "[1] is damaged by [2] points",
-"die": "[1] is killed",
+"die": "[1] is defeated",
 "sklMagicAttack": "[0] attacks",
 "sklAttack": "[0] attacks",
 "sklCounter": "[0] [counter attacks]",
@@ -121,7 +121,7 @@
 "sklConanThinkingFinish2": "There is always only one truth",
 "sklConanThinkingFinish3": "The murderer is you",
 "sklConanKillLast": "[1]",
-"sklConanKill": "[0] finds [1]'s corpse in a locked room",
+"sklConanKill": "[0] finds [1]'s dead body in a locked room",
 "returnTitle": "Return",
 "fastTitle": "Fast Forward",
 "shareTitle": "Share",
@@ -169,5 +169,9 @@
 "searchStart": "Searching...",
 "searchEnd": "Searching finished",
 "searchFailed": "but find nothing",
-"searchInvalid": "Error, too many players, please input less than 8000 players"
+"searchInvalid": "Error, too many players, please input less than 8000 players",
+"bossName_saitama": "Saitama",
+"saitamaLeave": "[0] has left the battlefield",
+"saitamaHungry": "[0] feels hungry",
+"sklConanKillUnknown": "[0] finds an unknown dead body in a locked room"
 }
