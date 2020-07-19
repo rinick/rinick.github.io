@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title> Rick's Game of Amoeba </title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h2 class="innerTitle">Deep Mess</h2>
+        
+      </div>
+      <div class="ad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- deepmess -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3283235194066083"
+     data-ad-slot="4224473058"
+     data-ad-format="auto"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+  <h2>Rick's Game of Amoeba</h2>
+  <p><strong>Rick's Game of Amoeba</strong> is a <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">Cellular Automaton</a> based on <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Game of Life</a>. It emulates Amoebas growing and devouring each other.</p>
+
+<style type="text/css">
+  span.cell{
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border:1px solid #000;
+  }
+  .black.cell{
+    background: black;
+  }
+
+  .membrane.cell{
+    background:#91d5ff;
+  }
+  .plasm.cell{
+    background: #003a8c;
+  }
+  .core.cell{
+    background: #096dd9;
+  }
+
+  .membrane1.cell{
+    background:#ffa39e;
+  }
+  .plasm1.cell{
+    background: #820014;
+  }
+  .core1.cell{
+    background: #cf1322;
+  }
+
+  .virus.cell{
+    background: #ff00ff;
+  }
+  .wall.cell{
+    background: #ffffff;
+  }
+
+</style>
+
+<h2 id="section">基本规则</h2>
+
+<p><span class="cell black"></span> Empty Space<br />
+<span class="cell plasm"></span> / <span class="cell plasm1"></span> Plasm: Slowly grows.<br />
+<span class="cell membrane"></span> / <span class="cell membrane1"></span> Membrane：Quickly grows around plasm, can survive without plasm.<br />
+<span class="cell core"></span> / <span class="cell core1"></span> Core: Can only survive around plasm，can also destroy and rebuild membrane<br />
+<span class="cell wall"></span> Wall, block the growth of amoeba. the rules around wall are modified to optimize circuit emulation.<br />
+<span class="cell virus"></span> Virus, Occurered at intence battle area of blue and red, converts all amoebas around it into virus.<br />
+<br />
+Basic Rules: Count different types of neighbors in 8 adjacent cells and..<br />
+<span class="cell black"></span> / <span class="cell plasm"></span> ⇒ <span class="cell core"></span> when <span class="cell core"></span> = 3 <br />
+<span class="cell plasm"></span> ⇒ <span class="cell black"></span> when <span class="cell core"></span> &gt; 3 | <span class="cell plasm"></span> = 0<br />
+<span class="cell core"></span> ⇒ <span class="cell black"></span> when <span class="cell plasm"></span> = 0<br />
+<span class="cell membrane"></span> ⇒ <span class="cell black"></span> when <span class="cell core"></span> &gt; 1<br />
+<span class="cell black"></span> ⇒ <span class="cell membrane"></span> when <span class="cell membrane"></span> &gt; 0 &amp; <span class="cell plasm"></span> &gt; 0 &amp; <span class="cell core"></span> = 0<br />
+<span class="cell black"></span> ⇒ <span class="cell plasm"></span> when <span class="cell plasm"></span> = 3 | (3 &gt; <span class="cell core"></span> &gt; 0 &amp; <span class="cell plasm"></span> &gt; 0)<br /></p>
+
+<hr />
+<p>Open the full web app to access more features（ Save / Load / Modify ）:</p>
+
+<p><a href="/amoeba/#en" target="_blank">deepmess.com/amoeba/</a></p>
+
+<iframe src="/amoeba/#en" frameborder="0" style="width:100%;height:752px">
+<iframe>
+</iframe></iframe>
+
+
+</section>
+
+<aside id="sidebar">
+
+<p>
+  
+</p>
+
+<a href="https://twitter.com/rinickzhou" class="link" target="_blank">
+  <div style="background-image: url(https://twitter.com/favicon.ico);"></div>
+  twitter
+</a>
+<a href="https://github.com/rinick" class="link" target="_blank">
+  <div style="background-image: url(https://github.com/favicon.ico);"></div>
+  GitHub
+</a>
+
+
+<ul>
+  <li><a href="/en/" ><img src="/images/us.png"></img> Home</a></li>
+  <li><a href="/" onClick="window.localStorage.language='zh'" ><img src="/images/cn.png"></img> 中文首页</a></li>
+  <br/>
+  <li>Projects</li>
+  <ul>
+    <li><a href="/en/amoeba.html">Game of Amoeba</a></li>
+    <li><a href="https://namerena.github.io/en.html">Namerena</a></li>
+    <li><a href="/en/hashdown/" >Hashdown</a></li>
+  </ul>
+  <br/>
+  <li>Others</li>
+  <ul>
+    <li><a href="/en/unicode/emoji.html" >Unicode Emoji</a></li>
+    <li><a href="/arithmetic/" >Arithmetic Practice</a></li>
+  </ul>
+</ul>
+<!--p></p>
+<p></p>
+<p style="font-size: smaller; position: absolute;bottom:0;margin-bottom:0;opacity: 0.8">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/architect-theme">Architect theme</a></p-->
+
+</aside>
+
+      </div>
+    </div>
+
+  </body>
+</html>
