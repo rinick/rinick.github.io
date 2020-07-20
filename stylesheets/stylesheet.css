@@ -424,7 +424,7 @@ table th,
 table td {
   padding: 6px 10px;
   border: 1px solid #ddd;
-  word-break: break-all;
+  word-break: break-word;
   min-width: 64px;
 }
 table tr {

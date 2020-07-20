@@ -41,11 +41,15 @@
   <h2>Rick's Game of Amoeba</h2>
   <p><strong>Rick's Game of Amoeba</strong> is a <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">Cellular Automaton</a> based on <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Game of Life</a>. It emulates Amoebas growing and devouring each other.</p>
 
+<p>Web app url: <a href="/amoeba/#en">deepmess.com/amoeba/</a></p>
+
+<p>Source code: <a href="https://github.com/rinick/game-of-amoeba">github.com/rinick/game-of-amoeba</a></p>
+
 <style type="text/css">
   span.cell{
     display:inline-block;
-    width:8px;
-    height:8px;
+    width:18px;
+    height:18px;
     border:1px solid #000;
   }
   .black.cell{
@@ -81,27 +85,63 @@
 
 </style>
 
-<h2 id="section">基本规则</h2>
+<h2 id="cell-types">Cell Types</h2>
 
-<p><span class="cell black"></span> Empty Space<br />
-<span class="cell plasm"></span> / <span class="cell plasm1"></span> Plasm: Slowly grows.<br />
-<span class="cell membrane"></span> / <span class="cell membrane1"></span> Membrane：Quickly grows around plasm, can survive without plasm.<br />
-<span class="cell core"></span> / <span class="cell core1"></span> Core: Can only survive around plasm，can also destroy and rebuild membrane<br />
-<span class="cell wall"></span> Wall, block the growth of amoeba. the rules around wall are modified to optimize circuit emulation.<br />
-<span class="cell virus"></span> Virus, Occurered at intence battle area of blue and red, converts all amoebas around it into virus.<br />
-<br />
-Basic Rules: Count different types of neighbors in 8 adjacent cells and..<br />
-<span class="cell black"></span> / <span class="cell plasm"></span> ⇒ <span class="cell core"></span> when <span class="cell core"></span> = 3 <br />
-<span class="cell plasm"></span> ⇒ <span class="cell black"></span> when <span class="cell core"></span> &gt; 3 | <span class="cell plasm"></span> = 0<br />
-<span class="cell core"></span> ⇒ <span class="cell black"></span> when <span class="cell plasm"></span> = 0<br />
-<span class="cell membrane"></span> ⇒ <span class="cell black"></span> when <span class="cell core"></span> &gt; 1<br />
-<span class="cell black"></span> ⇒ <span class="cell membrane"></span> when <span class="cell membrane"></span> &gt; 0 &amp; <span class="cell plasm"></span> &gt; 0 &amp; <span class="cell core"></span> = 0<br />
-<span class="cell black"></span> ⇒ <span class="cell plasm"></span> when <span class="cell plasm"></span> = 3 | (3 &gt; <span class="cell core"></span> &gt; 0 &amp; <span class="cell plasm"></span> &gt; 0)<br /></p>
+<table>
+<tr><th> Type </th><th> Rules </th></tr>
+<tr>
+  <td rowspan="2" align="center"> <span class="cell plasm"></span> / <span class="cell plasm1"></span><br /> Plasm </td><td> Slowly grows, constrained by membrane cells and utilized by core cells.</td>
+</tr>
+<tr><td>
+<ul>
+  <li><span style="color:#0a0">grows</span> from empty cell when there are 3 neighbor plasm cells</li>
+  <li><span style="color:#0a0">created</span> at empty cell when there is any neighbor plasm and 1~2 neigbor core cells</li>
+  <li><span style="color:#e00">cosumed</span> ( become empty cell ) when there are 4 or more neibor core cells</li>
+  <li><span style="color:#e00">desiccated</span> ( become empty cell ) when there is no neighbor plasm cell</li>
+  <li><span style="color:#e00">destroied</span> ( become empty cell ) when there are 2 or more enemy core cells or any enemy membrane cell</li>
+</ul>
+</td></tr>
+<tr>
+  <td rowspan="2" align="center" style="word-break: keep-all;"> <span class="cell membrane"></span> / <span class="cell membrane1"></span><br /> Membrane </td><td> Quickly grows around plasm cell.</td>
+</tr>
+<tr><td>
+<ul>
+  <li><span style="color:#0a0">grows</span> from empty cell when there is neighbor plasm cell and membrane cell but NO core cell.</li>
+  <li><span style="color:#e00">destroied</span> when there are 2 or more neighbor core cells.</li>
+</ul>
+</td></tr>
+<tr>
+  <td rowspan="2" align="center"> <span class="cell core"></span> / <span class="cell core1"></span><br /> Core </td><td> Core part of the amoeba, can not live without plasm.</td>
+</tr>
+<tr><td>
+<ul>
+  <li><span style="color:#0a0">grows</span> from empty cell or plasm cell when there are 3 neighbor core cells.</li>
+  <li><span style="color:#e00">dies</span> when there is no neighbor plasm cell.</li>
+</ul>
+</td></tr>
+<tr>
+  <td rowspan="2" align="center"> <span class="cell virus"></span><br /> Virus </td><td> Infects all amoeba cells.</td>
+</tr>
+<tr><td>
+<ul>
+  <li><span style="color:#0a0">grows</span> from membrane cell when there are 6 enemy plasm cells and 1 ally plasm cell.</li>
+  <li><span style="color:#0a0">infects</span> plasm/membrane/core cell when there is any neigbor virus cell.</li>
+  <li><span style="color:#e00">dies</span> when there are less than 5 neighbor virus cell and no neighbor plasm/membrane/core cell.</li>
+</ul>
+</td></tr>
+<tr>
+  <td rowspan="2" align="center"> <span class="cell wall"></span><br /> Wall </td><td> Just wall.</td>
+</tr>
+<tr><td>
+  <p>There is no rule to convert any cell to wall or convert wall cell to anything else.</p>
+  <p>But other rules are modified when there are walls around. These rules are mainly designed to improve circuit emulation. For example: Plasm cell wont grow when there is wall cell but no core cell neighbor.</p>
+</td></tr>
+</table>
 
 <hr />
 <p>Open the full web app to access more features（ Save / Load / Modify ）:</p>
 
-<p><a href="/amoeba/#en" target="_blank">deepmess.com/amoeba/</a></p>
+<p><a href="/amoeba/#en">deepmess.com/amoeba/</a></p>
 
 <iframe src="/amoeba/#en" frameborder="0" style="width:100%;height:752px">
 <iframe>
