@@ -41,9 +41,12 @@
   <h2>Rick's Game of Amoeba</h2>
   <p><strong>Rick's Game of Amoeba</strong> is a <a href="https://en.wikipedia.org/wiki/Cellular_automaton" target="_blank">Cellular Automaton</a> based on <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">Game of Life</a>. It emulates Amoebas growing and devouring each other.</p>
 
-<p>Web app url: <a href="/amoeba/#en">deepmess.com/amoeba/</a></p>
-
 <p>Source code: <a href="https://github.com/rinick/game-of-amoeba">github.com/rinick/game-of-amoeba</a></p>
+
+<hr />
+<p>Open the full web app to access more features（ Save / Load / Edit ）:</p>
+
+<p><a href="/amoeba/#en">deepmess.com/amoeba/</a></p>
 
 <style type="text/css">
   span.cell{
@@ -83,7 +86,18 @@
     background: #ffffff;
   }
 
+  iframe {
+    height:752px;
+  }
+@media (max-width: 500px) {
+  iframe {
+    height: 540px
+  }
+}
 </style>
+
+<iframe src="/amoeba/#en" frameborder="0" style="width:100%">
+</iframe>
 
 <h2 id="cell-types">Cell Types</h2>
 
@@ -138,14 +152,16 @@
 </td></tr>
 </table>
 
-<hr />
-<p>Open the full web app to access more features（ Save / Load / Modify ）:</p>
+<h2 id="idea-and-new-samples">Idea and new samples</h2>
 
-<p><a href="/amoeba/#en">deepmess.com/amoeba/</a></p>
+<p>Please submit your idea or sample stage (as webp file) at <a href="https://github.com/rinick/game-of-amoeba/issues">github.com/rinick/game-of-amoeba/issues</a></p>
 
-<iframe src="/amoeba/#en" frameborder="0" style="width:100%;height:752px">
-<iframe>
-</iframe></iframe>
+<p>Also these rules are not finalized yet, samples that relies on these cases might be broken in the future:</p>
+
+<ul>
+  <li>rules that involve both walls and membrane cells</li>
+  <li>rules that involve walls and both color of amoeba cells</li>
+</ul>
 
 
 </section>
@@ -179,6 +195,7 @@
   <br/>
   <li>Others</li>
   <ul>
+    <li><a href="/en/chess.html" >Lego Chess Pieces Design</a></li>
     <li><a href="/en/unicode/emoji.html" >Unicode Emoji</a></li>
     <li><a href="/arithmetic/" >Arithmetic Practice</a></li>
   </ul>
