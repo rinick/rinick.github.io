@@ -44,13 +44,13 @@
 <p>本页教程<strong><span style="color:red">只适用于最新版的Windows 10</span></strong><br />
 老版Windows或OSX系统可以下载<a href="virtualbox.html">预装深度熔合的VirtualBox镜像</a></p>
 
-<h3 id="linux">启用Linux子系统</h3>
+<h3 id="启用linux子系统">启用Linux子系统</h3>
 
-<p>在Windows设置里，进入<code class="highlighter-rouge">更新和安全</code>，开启<code class="highlighter-rouge">开发人员模式</code></p>
+<p>在Windows设置里，进入<code class="language-plaintext highlighter-rouge">更新和安全</code>，开启<code class="language-plaintext highlighter-rouge">开发人员模式</code></p>
 
 <p><img src="images/win10_setting.png" alt="" /></p>
 
-<p>在 控制面板 - 程序和功能 里，开启<code class="highlighter-rouge">Linux子系统</code></p>
+<p>在 控制面板 - 程序和功能 里，开启<code class="language-plaintext highlighter-rouge">Linux子系统</code></p>
 
 <p><img src="images/win10_feature.png" alt="" /></p>
 
@@ -58,19 +58,19 @@
 
 <p><img src="images/powershell.png" alt="" /></p>
 
-<p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="highlighter-rouge">y</code>回车就会开始下载<br />
+<p>第一次打开Bash会提示要不要下载安装Ubuntu，键入<code class="language-plaintext highlighter-rouge">y</code>回车就会开始下载<br />
 下载完成后需要几分钟时间解压，解压完以提示新建linux用户名，再输入两次密码<br />
 如果是中文系统的话这里可能会出现乱码，但不影响之后的使用</p>
 
 <p><img src="images/bash_install.png" alt="" /></p>
 
-<h3 id="section">安装深度熔合</h3>
+<h3 id="安装深度熔合">安装深度熔合</h3>
 
 <p>接着逐行复制以下命令到bash终端，整个过程需要下载1GB以上的数据</p>
 
 <p>运行的过程中有几处会提示输入密码</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~
 
 sudo apt-get update; sudo apt-get -y upgrade; sudo apt-get -y install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
 
@@ -79,25 +79,23 @@ curl -s https://raw.githubusercontent.com/rinick/deep-fuse/master/install_torch.
 source ~/.bashrc
 
 curl -s https://raw.githubusercontent.com/rinick/deep-fuse/master/install_win_bash.sh | bash
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>熟悉Linux的用户也可以<a href="install.html">自行安装需要的模块</a></p>
 
-<h3 id="section-1">运行</h3>
+<h3 id="运行">运行</h3>
 
 <p>在bash终端输入</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/deep-fuse
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/deep-fuse
 sh run.sh
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="section-2">已知问题</h3>
+<h3 id="已知问题">已知问题</h3>
 
 <p>由于<a href="https://github.com/Microsoft/BashOnWindows/issues/616">这个Windows的Bug</a>，上传图像可能会卡住。暂时只能等微软的补丁来修复这些问题。</p>
 
-<p>如果点击开始合成之后，超过30秒页面都没有更新，可以进入命令行<code class="highlighter-rouge">Ctrl+C</code>终止任务，在重新<code class="highlighter-rouge">sh run.sh</code>运行</p>
+<p>如果点击开始合成之后，超过30秒页面都没有更新，可以进入命令行<code class="language-plaintext highlighter-rouge">Ctrl+C</code>终止任务，在重新<code class="language-plaintext highlighter-rouge">sh run.sh</code>运行</p>
 
 <!--
 ### 其他

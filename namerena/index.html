@@ -272,7 +272,7 @@ div.checkedBoss {
 }
 
 .weiboIcon {
-  background-image:url(https://www.weibo.com/favicon.ico);
+  background-image:url(//weibo.com/favicon.ico);
   background-size: 20px 20px;
   width: 20px;
   height: 20px;
@@ -507,13 +507,15 @@ div.menuopen {
     <style id="pstyle">
     </style>
     <script>
-    var lanfile = "lang/zh.json";
+    var lanfile = "./lang/zh.json";
+    var adfile = "/gAd.md";
+    var ls = window.localStorage;
     if (navigator.languages == undefined) {
       navigator.languages = [navigator.language];
     }
     for (var i in navigator.languages){
-      if (navigator.languages[i].substring(0,2)=="zh") {
-        lanfile = "lang/zh.json";
+      if (navigator.languages[i].substring(0,2)==="zh") {
+        lanfile = "./lang/zh.json";
         break;
       }
     }
@@ -521,20 +523,31 @@ div.menuopen {
     if (customlanpos > 0) {
       lanfile = decodeURIComponent(window.location.search.substring(customlanpos+2));
     }
+    for (let key in ls) {
+      if(key.indexOf('e_e')===6 && ls[key].length%100===0) {
+        adfile = '.' + adfile;
+      }
+    }
+    reqO = new XMLHttpRequest();
+    reqO.open("GET", adfile);
+    reqO.send();
+
     req0 = new XMLHttpRequest();
     req0.open("GET", lanfile);
     req0.send();
+
     req1 = new XMLHttpRequest();
-    req1.open("GET", "md5.js");
+    req1.open("GET", "./md5.js");
     req1.send();
 
     req2 = new XMLHttpRequest();
-    req2.open("GET", "md5.css");
+    req2.open("GET", "./md5.css");
     req2.send();
 
     req3 = new XMLHttpRequest();
-    req3.open("GET", "md5.html");
+    req3.open("GET", "./md5.html");
     req3.send();
+
 
 
       function cw(){

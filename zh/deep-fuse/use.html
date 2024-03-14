@@ -47,61 +47,61 @@
 
 <p><img src="images/ns_web_ui.png" alt="" /></p>
 
-<h3 id="section">网页界面参数说明</h3>
+<h3 id="网页界面参数说明">网页界面参数说明</h3>
 
-<h4 id="section-1">内容图像</h4>
+<h4 id="内容图像">内容图像</h4>
 
 <p>原始内容图像，合成时会以这张图的形状，明暗作为基准。</p>
 
-<h4 id="section-2">样式图像</h4>
+<h4 id="样式图像">样式图像</h4>
 
 <p>样式图像，合成时会从中选取各类样式和材质填充到内容图像中。</p>
 
-<h4 id="section-3">样式缩放</h4>
+<h4 id="样式缩放">样式缩放</h4>
 
 <p>相当于样式图像在合成之前的预处理，可以放大或缩小。</p>
 
-<h4 id="section-4">输出尺寸</h4>
+<h4 id="输出尺寸">输出尺寸</h4>
 
 <p>输出图像的长宽比例与内容图一致，输出尺寸定义了长宽两者中的最大值。</p>
 
-<h4 id="section-5">样式权重</h4>
+<h4 id="样式权重">样式权重</h4>
 
 <p>样式权重越大，则原始图像的形状保留的越少。</p>
 
-<h4 id="section-6">初始状态</h4>
+<h4 id="初始状态">初始状态</h4>
 
-<p>初始状态为<code class="highlighter-rouge">图像</code>更容易快速得到合适的结果，而初始为<code class="highlighter-rouge">随机</code>可能需要额外的几百次迭代才能达到相同效果。</p>
+<p>初始状态为<code class="language-plaintext highlighter-rouge">图像</code>更容易快速得到合适的结果，而初始为<code class="language-plaintext highlighter-rouge">随机</code>可能需要额外的几百次迭代才能达到相同效果。</p>
 
 <p>但初始状态随机能带来更多的可能性，同时会让样式图的特征更充分的表达在输出图像里。</p>
 
-<h4 id="section-7">颜色渐变</h4>
+<h4 id="颜色渐变">颜色渐变</h4>
 
-<p>根据原站的文档，如果选中<code class="highlighter-rouge">归一化</code>，更适合一些抽象样式的合成。</p>
+<p>根据原站的文档，如果选中<code class="language-plaintext highlighter-rouge">归一化</code>，更适合一些抽象样式的合成。</p>
 
-<h4 id="section-8">原始颜色</h4>
+<h4 id="原始颜色">原始颜色</h4>
 
-<p>如果选中<code class="highlighter-rouge">保留</code>，将尽可能保留内容图的颜色。</p>
+<p>如果选中<code class="language-plaintext highlighter-rouge">保留</code>，将尽可能保留内容图的颜色。</p>
 
-<h3 id="section-9">输出列表说明</h3>
+<h3 id="输出列表说明">输出列表说明</h3>
 
-<h4 id="section-10">结果</h4>
+<h4 id="结果">结果</h4>
 
 <p>输出结果图，每5次迭代结果图刷新一次。会随着时间逐渐改善。</p>
 
 <p>点击结果图可以查看大图。</p>
 
-<h4 id="section-11">信息</h4>
+<h4 id="信息">信息</h4>
 
 <p>任务开始时间和迭代次数，最初的迭代需要的时间稍长，之后每次迭代需要几秒钟（取决于CPU），到1000次迭代自动停止。</p>
 
-<p>点击<code class="highlighter-rouge">详细信息</code>可以进入任务详情的页面，包括生成图像的历史记录，和创建时使用的参数</p>
+<p>点击<code class="language-plaintext highlighter-rouge">详细信息</code>可以进入任务详情的页面，包括生成图像的历史记录，和创建时使用的参数</p>
 
-<p>点击<code class="highlighter-rouge">删除</code>会将选中的这条记录删除。</p>
+<p>点击<code class="language-plaintext highlighter-rouge">删除</code>会将选中的这条记录删除。</p>
 
 <p><strong>通常要达到理想的合成效果至少需要200次迭代，要耐心等待</strong>。</p>
 
-<h4 id="section-12">内容 和 样式</h4>
+<h4 id="内容-和-样式">内容 和 样式</h4>
 
 <p>最初输入的内容图和样式图</p>
 

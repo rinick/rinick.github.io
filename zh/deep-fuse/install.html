@@ -39,19 +39,18 @@
       <div class="inner clearfix">
         <section id="main-content">
   <h2>安装深度熔合</h2>
-  <h3 id="section">安装</h3>
+  <h3 id="安装">安装</h3>
 
 <p>在Ubuntu的终端里依次输入以下命令</p>
 
 <p>安装必要的编译工具</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
 sudo apt-get install build-essential git cmake libprotobuf-dev protobuf-compiler curl libreadline-dev
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>安装Dart<br />
 如果以下命令被墙 可以到这里下载安装包 <a href="https://github.com/rinick/sdk/releases/tag/1.20.0-dev.10.1">github.com/rinick/sdk/releases</a></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 sudo apt-get update
 sudo apt-get install apt-transport-https
 
@@ -61,11 +60,10 @@ sudo sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debi
 sudo apt-get update
 
 sudo apt-get install dart
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>安装torch</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
 
 git clone https://github.com/torch/distro.git ~/torch --recursive
 
@@ -74,18 +72,16 @@ cd ~/torch
 ./install.sh
 
 source ~/.bashrc
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>安装caffee加载器</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~
 
 luarocks install loadcaffe
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>安装深度熔合</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/rinick/deep-fuse.git --recursive
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/rinick/deep-fuse.git --recursive
 cd ~/deep-fuse/neural-style
 sh ./models/download_models.sh
 
@@ -93,15 +89,13 @@ cd ..
 
 /usr/lib/dart/bin/pub get
 /usr/lib/dart/bin/pub build
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="section-1">运行</h3>
+<h3 id="运行">运行</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/deep-fuse
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/deep-fuse
 sh run.sh
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
 </section>
