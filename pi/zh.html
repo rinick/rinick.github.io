@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Rick's Deep Mess </title>
+    <title> π </title>
   </head>
 
   <body>
@@ -38,54 +38,67 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Rick's Deep Mess</h2>
-  <hr />
-<script>
-(()=>{
-  let lan = window.localStorage.language;
-  if (lan) {
-      if (lan === 'en') {
-        window.location.replace("/en/");
-      }
-  } else {
-    let hasZh = window.navigator.language.startsWith('zh');
-    let hasOther = false;
-    if (!hasZh) {
-      for (let str of window.navigator.languages) {
-        if (str.startsWith('zh')) {
-          hasZh = true;
-        } else if (!str.startsWith('en')) {
-          hasOther = true;
-        }
-      }
-      if (!hasZh || hasOther) {
-        window.location.replace("/en/");
-      }
-    }
+  <h2>π</h2>
+  <style>
+  #cm-editor {
+    min-height: 400px;
+    width: 100%;
+    overflow: scroll;
   }
-})();
+  #main-content {
+    position: relative;
+  }
+  #pi-toolbox{
+    position: absolute;
+    padding: 4px;
+    gap: 4px;
+    width: calc(100% - 80px);
+    top: 20px;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+  }
+  #pi-rule-input{
+    flex-grow: 1;
+  }
+  .cm-editor {
+    font-size: 32px;
+  }
+  .cm-gutterElement {
+    font-size: 14px;
+  }
+</style>
+
+<div id="pi-toolbox">
+格式: <input id="pi-rule-input" />
+</div>
+<div id="cm-editor"></div>
+<script type="importmap">
+{
+  "imports": {
+    "@codemirror/state": "https://cdn.jsdelivr.net/npm/@codemirror/state@6.4.1/dist/index.js",
+    "@codemirror/view":  "https://cdn.jsdelivr.net/npm/@codemirror/view@6.38.1/dist/index.js",
+    "@codemirror/basic-setup": "https://cdn.jsdelivr.net/npm/@codemirror/basic-setup@0.20.0/dist/index.js",
+
+    "@codemirror/commands": "https://cdn.jsdelivr.net/npm/@codemirror/commands@6.8.1/dist/index.js",
+    "@codemirror/search":   "https://cdn.jsdelivr.net/npm/@codemirror/search@6.5.6/dist/index.js",
+    "@codemirror/autocomplete": "https://cdn.jsdelivr.net/npm/@codemirror/autocomplete@6.18.6/dist/index.js",
+    "@codemirror/lint":     "https://cdn.jsdelivr.net/npm/@codemirror/lint@6.8.5/dist/index.js",
+    "@codemirror/language": "https://cdn.jsdelivr.net/npm/@codemirror/language@6.11.3/dist/index.js",
+
+    "@lezer/common":   "https://cdn.jsdelivr.net/npm/@lezer/common@1.2.1/dist/index.js",
+    "@lezer/highlight":"https://cdn.jsdelivr.net/npm/@lezer/highlight@1.2.0/dist/index.js",
+
+    "style-mod":   "https://cdn.jsdelivr.net/npm/style-mod@4.0.3/src/style-mod.js",
+    "w3c-keyname": "https://cdn.jsdelivr.net/npm/w3c-keyname@2.2.8/index.js",
+    "crelt":       "https://cdn.jsdelivr.net/npm/crelt@1.0.6/index.js"
+  }
+}
 </script>
 
-<table>
-  <tbody>
-    <tr>
-      <td><a href="/zh/chess.html"><img src="/images/icon/chess.png" style="min-width:160px;width:160px" /></a></td>
-      <td><a href="/zh/chess.html">乐高国际象棋设计</a> <br /> 用乐高设计的国际象棋棋子</td>
-    </tr>
-    <tr>
-      <td><a href="/zh/amoeba.html"><img src="/images/icon/amoeba.png" alt="" /></a></td>
-      <td><a href="/zh/amoeba.html">变形虫自动机</a> <br /> 基于GLSL的细胞自动机模拟</td>
-    </tr>
-    <tr>
-      <td><a href="/zh/namerena/"><img src="/images/icon/namerena.png" alt="" /></a></td>
-      <td><a href="/zh/namerena/">名字竞技场</a> <br /> 基于文本的对战游戏，战斗的过程由输入的名字决定，固定的输入有固定的对战结果</td>
-    </tr>
-    <tr>
-      <td><a href="/zh/hashdown/"><img src="/images/icon/hashdown.png" style="min-width:160px" /></a></td>
-      <td><a href="/zh/hashdown/">Hashdown</a> <br /> 文本编码和压缩的工具，可以在有限的字符内储存更多的文本信息</td>
-    </tr>
-  </tbody>
-</table>
+<script src="./data.js"></script>
+
+<script type="module" src="./pi.js"></script>
 
 
 

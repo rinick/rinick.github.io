@@ -12,7 +12,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title> Rick's Deep Mess </title>
+    <title> π </title>
   </head>
 
   <body>
@@ -38,29 +38,68 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-  <h2>Rick's Deep Mess</h2>
-  <hr />
+  <h2>π</h2>
+  <style>
+  #cm-editor {
+    min-height: 400px;
+    width: 100%;
+    overflow: scroll;
+  }
+  #main-content {
+    position: relative;
+  }
+  #pi-toolbox{
+    position: absolute;
+    padding: 4px;
+    gap: 4px;
+    width: calc(100% - 80px);
+    top: 20px;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+  }
+  #pi-rule-input{
+    flex-grow: 1;
+  }
+  .cm-editor {
+    font-size: 32px;
+  }
+  .cm-gutterElement {
+    font-size: 14px;
+  }
+</style>
 
-<table>
-  <tbody>
-    <tr>
-      <td><a href="/en/chess.html"><img src="/images/icon/chess.png" style="min-width:160px;width:160px" /></a></td>
-      <td><a href="/en/chess.html">Lego Chess Pieces Design</a> <br /> My customized design of Lego chess pieces.</td>
-    </tr>
-    <tr>
-      <td><a href="/en/amoeba.html"><img src="/images/icon/amoeba.png" alt="" /></a></td>
-      <td><a href="/en/amoeba.html">Rick's Game of Amoeba</a> <br /> A Cellular automaton web app base on Game of Life.</td>
-    </tr>
-    <tr>
-      <td><a href="/en/hashdown/"><img src="/images/icon/hashdown.png" /></a></td>
-      <td><a href="/en/hashdown/">Hashdown</a> <br /> Text encoding and compression tool.</td>
-    </tr>
-    <tr>
-      <td><a href="https://namerena.github.io/en.html"><img src="/images/icon/namerena.png" alt="" /></a></td>
-      <td><a href="https://namerena.github.io/en.html">Namerena</a> <br /> A Text based fighting game, game result is determined by input names.</td>
-    </tr>
-  </tbody>
-</table>
+<div id="pi-toolbox">
+Format: <input id="pi-rule-input" />
+</div>
+<div id="cm-editor"></div>
+<script type="importmap">
+{
+  "imports": {
+    "@codemirror/state": "https://cdn.jsdelivr.net/npm/@codemirror/state@6.4.1/dist/index.js",
+    "@codemirror/view":  "https://cdn.jsdelivr.net/npm/@codemirror/view@6.38.1/dist/index.js",
+    "@codemirror/basic-setup": "https://cdn.jsdelivr.net/npm/@codemirror/basic-setup@0.20.0/dist/index.js",
+
+    "@codemirror/commands": "https://cdn.jsdelivr.net/npm/@codemirror/commands@6.8.1/dist/index.js",
+    "@codemirror/search":   "https://cdn.jsdelivr.net/npm/@codemirror/search@6.5.6/dist/index.js",
+    "@codemirror/autocomplete": "https://cdn.jsdelivr.net/npm/@codemirror/autocomplete@6.18.6/dist/index.js",
+    "@codemirror/lint":     "https://cdn.jsdelivr.net/npm/@codemirror/lint@6.8.5/dist/index.js",
+    "@codemirror/language": "https://cdn.jsdelivr.net/npm/@codemirror/language@6.11.3/dist/index.js",
+
+    "@lezer/common":   "https://cdn.jsdelivr.net/npm/@lezer/common@1.2.1/dist/index.js",
+    "@lezer/highlight":"https://cdn.jsdelivr.net/npm/@lezer/highlight@1.2.0/dist/index.js",
+
+    "style-mod":   "https://cdn.jsdelivr.net/npm/style-mod@4.0.3/src/style-mod.js",
+    "w3c-keyname": "https://cdn.jsdelivr.net/npm/w3c-keyname@2.2.8/index.js",
+    "crelt":       "https://cdn.jsdelivr.net/npm/crelt@1.0.6/index.js"
+  }
+}
+</script>
+
+<script src="./data.js"></script>
+
+<script type="module" src="./pi.js"></script>
+
 
 
 </section>
