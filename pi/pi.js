@@ -79,10 +79,12 @@ function parseRule(str) {
                 }
             } else {
                 let rule = part.trim().split(' ').map(parseInt);
-                newRules.push(rule);
                 let rowSum = rule.reduce((a, b) => a + b, 0);
-                preRows.push(preRowSum);
-                preRowSum += rowSum;
+                if (rowSum > 0) {
+                  newRules.push(rule);
+                  preRows.push(preRowSum);
+                  preRowSum += rowSum;
+                }
             }
         }
         if (newRules.length > 0) {
