@@ -1,4 +1,5 @@
-/Gemfile
-/Gemfile.lock
-/start.bat
+.build
+.idea
+dist
+node_modules
 /arithmetic

@@ -1,0 +1,19 @@
+{
+  "name": "deepmess-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node .build/build.js",
+    "dev": "npm run build && node .build/dev.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  }
+}
