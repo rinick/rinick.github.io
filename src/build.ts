@@ -4,8 +4,14 @@ import { load } from "js-yaml";
 import MarkdownIt from "markdown-it";
 
 type PageData = {
+  [key: string]: unknown;
   layout?: string;
+  partial?: boolean;
   title?: string;
+};
+
+type RenderContext = {
+  sourceRelativePath: string;
 };
 
 const rootDir = process.cwd();
@@ -164,16 +170,28 @@ function parseFrontMatter(source: string): { data: PageData; body: string } | nu
   };
 }
 
-function applyTemplate(template: string, content: string, data: PageData): string {
+async function applyTemplate(
+  template: string,
+  content: string,
+  data: PageData,
+  context: RenderContext,
+): Promise<string> {
   const values: Record<string, string> = {
     baseUrl: "",
     content,
     title: data.title ?? "",
   };
 
-  const rendered = template.replace(
-    /\{\{\s*(baseUrl|content|title)\s*\}\}/g,
-    (_, key: string) => values[key],
+  let rendered = template.replace(
+    /\{\{\s*([A-Za-z][\w.-]*)\s*\}\}/g,
+    (_, key: string) => getTemplateValue(key, values, data),
+  );
+
+  rendered = await replaceAsync(
+    rendered,
+    /\{\{\s*include:([^}]+?)\s*\}\}/g,
+    async (_, includeTarget: string) =>
+      readTemplateInclude(resolveIncludeTarget(includeTarget.trim(), data), context),
   );
 
   if (rendered.includes("{{")) {
@@ -183,10 +201,98 @@ function applyTemplate(template: string, content: string, data: PageData): strin
   return rendered;
 }
 
+function getTemplateValue(key: string, values: Record<string, string>, data: PageData): string {
+  if (key in values) {
+    return values[key];
+  }
+
+  const value = data[key];
+  if (value == null) {
+    return "";
+  }
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+
+  throw new Error(`Template value is not renderable: ${key}`);
+}
+
+function resolveIncludeTarget(includeTarget: string, data: PageData): string {
+  const value = data[includeTarget];
+  if (value == null) {
+    if (/^[A-Za-z][\w.-]*$/.test(includeTarget)) {
+      throw new Error(`Missing include target: ${includeTarget}`);
+    }
+
+    return includeTarget;
+  }
+  if (typeof value !== "string") {
+    throw new Error(`Include target is not a string: ${includeTarget}`);
+  }
+
+  return value;
+}
+
+async function replaceAsync(
+  source: string,
+  pattern: RegExp,
+  replacer: (...match: string[]) => Promise<string>,
+): Promise<string> {
+  const matches = Array.from(source.matchAll(pattern));
+  const replacements = await Promise.all(matches.map((match) => replacer(...match)));
+  let index = 0;
+
+  return source.replace(pattern, () => replacements[index++]);
+}
+
+async function readTemplateInclude(includePath: string, context: RenderContext): Promise<string> {
+  if (!includePath || path.isAbsolute(includePath) || includePath.split(/[\\/]/).includes("..")) {
+    throw new Error(`Invalid include path: ${includePath}`);
+  }
+
+  const sourceDirectory = path.resolve(rootDir, path.dirname(context.sourceRelativePath));
+
+  for (let directory = sourceDirectory; ; directory = path.dirname(directory)) {
+    if (directory !== rootDir && !directory.startsWith(`${rootDir}${path.sep}`)) {
+      break;
+    }
+
+    for (const candidate of includePathCandidates(includePath)) {
+      const resolvedPath = path.resolve(directory, candidate);
+      if (resolvedPath !== rootDir && !resolvedPath.startsWith(`${rootDir}${path.sep}`)) {
+        throw new Error(`Include path escapes docs root: ${includePath}`);
+      }
+
+      try {
+        const source = await readFile(resolvedPath, "utf8");
+        const parsed = parseFrontMatter(source);
+        const body = parsed ? parsed.body : source;
+
+        return path.extname(candidate) === ".md" ? renderMarkdown(body) : body;
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
+          throw error;
+        }
+      }
+    }
+  }
+
+  throw new Error(`Include not found: ${includePath}`);
+}
+
+function includePathCandidates(includePath: string): string[] {
+  if (path.extname(includePath)) {
+    return [includePath];
+  }
+
+  return [includePath, `${includePath}.html`, `${includePath}.md`];
+}
+
 async function renderLayout(
   layout: string,
   content: string,
   data: PageData,
+  context: RenderContext,
   stack: string[] = [],
 ): Promise<string> {
   if (stack.includes(layout)) {
@@ -195,11 +301,11 @@ async function renderLayout(
 
   const templatePath = path.join(layoutsDir, `${layout}.html`);
   const template = await readFile(templatePath, "utf8");
-  const rendered = applyTemplate(template, content, data);
+  const rendered = await applyTemplate(template, content, data, context);
   const parent = parentLayouts[layout];
 
   return parent
-    ? renderLayout(parent, rendered, data, [...stack, layout])
+    ? renderLayout(parent, rendered, data, context, [...stack, layout])
     : rendered;
 }
 
@@ -220,9 +326,15 @@ async function processFile(relativePath: string): Promise<void> {
     return;
   }
 
+  if (parsed.data.partial) {
+    return;
+  }
+
   let content = extension === ".md" ? renderMarkdown(parsed.body) : parsed.body;
   if (parsed.data.layout) {
-    content = await renderLayout(parsed.data.layout, content, parsed.data);
+    content = await renderLayout(parsed.data.layout, content, parsed.data, {
+      sourceRelativePath: relativePath,
+    });
   }
 
   const outputPath =
