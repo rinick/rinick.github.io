@@ -18,6 +18,27 @@ const rootDir = process.cwd();
 const outputDir = path.join(rootDir, "dist");
 const layoutsDir = path.join(rootDir, "layouts");
 const markdown = new MarkdownIt({ html: true });
+const defaultImageRenderer =
+  markdown.renderer.rules.image ??
+  ((tokens, index, options, _environment, renderer) =>
+    renderer.renderToken(tokens, index, options));
+
+markdown.renderer.rules.image = (tokens, index, options, environment, renderer) => {
+  const token = tokens[index];
+  const match = token.content.match(/^!(\d*)$/);
+
+  if (match) {
+    token.attrJoin("class", "markdown-popup-image");
+    token.attrSet("tabindex", "0");
+    token.attrSet("role", "button");
+    token.attrSet("aria-label", "Open image preview");
+    if (match[1]) {
+      token.attrSet("width", match[1]);
+    }
+  }
+
+  return defaultImageRenderer(tokens, index, options, environment, renderer);
+};
 
 const ignoredRoots = new Set([
   ".build",
