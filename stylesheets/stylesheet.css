@@ -705,6 +705,26 @@ form {
   content: "/";
 }
 
+#main-content .has-custom-anchor:before {
+  content: none;
+}
+
+#main-content .heading-anchor {
+  display: inline-block;
+  padding-right: 0.3em;
+  margin-left: -1em;
+  color: #9ddcff;
+  text-indent: 0;
+}
+
+#main-content h1 .heading-anchor {
+  margin-left: -0.9em;
+}
+
+#main-content .heading-anchor:hover {
+  color: #2879d0;
+}
+
 #main-content h2 {
   margin-bottom: 8px;
 
