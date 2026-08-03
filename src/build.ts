@@ -18,10 +18,73 @@ const rootDir = process.cwd();
 const outputDir = path.join(rootDir, "dist");
 const layoutsDir = path.join(rootDir, "layouts");
 const markdown = new MarkdownIt({ html: true });
+const customAnchorPattern = /\s+\{#([-A-Za-z0-9_:.]+)\}\s*$/;
+const headingMarkers: Record<string, string> = {
+  h1: "/",
+  h2: "▓",
+  h3: "■",
+  h4: "□",
+  h5: "#",
+  h6: "#",
+};
+const defaultHeadingOpenRenderer =
+  markdown.renderer.rules.heading_open ??
+  ((tokens, index, options, _environment, renderer) =>
+    renderer.renderToken(tokens, index, options));
 const defaultImageRenderer =
   markdown.renderer.rules.image ??
   ((tokens, index, options, _environment, renderer) =>
     renderer.renderToken(tokens, index, options));
+
+markdown.core.ruler.push("custom_heading_anchor", (state) => {
+  for (let index = 0; index < state.tokens.length - 1; index += 1) {
+    const headingToken = state.tokens[index];
+    const inlineToken = state.tokens[index + 1];
+    if (headingToken.type !== "heading_open" || inlineToken.type !== "inline") {
+      continue;
+    }
+
+    const match = inlineToken.content.match(customAnchorPattern);
+    const lastChild = inlineToken.children?.at(-1);
+    if (!match || !lastChild || lastChild.type !== "text") {
+      continue;
+    }
+
+    const childContent = lastChild.content.replace(customAnchorPattern, "");
+    if (childContent === lastChild.content) {
+      continue;
+    }
+
+    inlineToken.content = inlineToken.content.slice(0, match.index).trimEnd();
+    if (childContent) {
+      lastChild.content = childContent;
+    } else {
+      inlineToken.children?.pop();
+    }
+    headingToken.attrSet("id", match[1]);
+    headingToken.attrJoin("class", "has-custom-anchor");
+  }
+});
+
+markdown.renderer.rules.heading_open = (tokens, index, options, environment, renderer) => {
+  const token = tokens[index];
+  const openingTag = defaultHeadingOpenRenderer(
+    tokens,
+    index,
+    options,
+    environment,
+    renderer,
+  );
+  const anchor = token.attrGet("id");
+
+  if (!anchor || !token.attrGet("class")?.split(" ").includes("has-custom-anchor")) {
+    return openingTag;
+  }
+
+  const escapedAnchor = markdown.utils.escapeHtml(anchor);
+  const marker = headingMarkers[token.tag] ?? "#";
+  return `${openingTag}<a class="heading-anchor" href="#${escapedAnchor}" aria-label="Permalink to this section">${marker}</a>`;
+};
 
 markdown.renderer.rules.image = (tokens, index, options, environment, renderer) => {
   const token = tokens[index];
