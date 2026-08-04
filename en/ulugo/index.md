@@ -36,9 +36,9 @@ Minimal mode hides most of the interface so the board can fill as much of the wi
 
 ![!640](./minimal-mode.webp)
 
-### Where to Start
+### Feature Index
 
-| I want to… | Go to |
+| Feature | Documentation |
 | --- | --- |
 | Import a board from a photo or score a finished game | [Board Image Recognition](./scan.html) |
 | Review a game with AI | [AI Analysis](./analysis.html) |

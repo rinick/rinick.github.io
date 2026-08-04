@@ -36,9 +36,9 @@ sidebar: ./sidebar
 
 ![!640](./minimal-mode.webp)
 
-### 从哪里开始
+### 功能索引
 
-| 我想要…… | 前往 |
+| 功能 | 相关文档 |
 | --- | --- |
 | 拍照录入棋盘或盘后数子 | [棋谱图像识别](./scan.html) |
 | 用 AI 复盘棋局 | [AI分析](./analysis.html) |
