@@ -521,6 +521,10 @@ header h2 {
   width: 690px;
 }
 
+#main-content table {
+  margin-bottom: 24px;
+}
+
 #main-content img {
   max-width: 100%;
 }
