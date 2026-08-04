@@ -36,9 +36,9 @@ Der Minimalmodus blendet den größten Teil der Oberfläche aus, damit das Brett
 
 ![!640](/en/ulugo/minimal-mode.webp)
 
-### Einstieg nach Aufgabe
+### Funktionsübersicht
 
-| Aufgabe | Seite |
+| Funktion | Dokumentation |
 | --- | --- |
 | Ein Brett aus einem Foto übernehmen oder eine beendete Partie auszählen | [Bilderkennung des Go-Bretts](./scan.html) |
 | Eine Partie mit KI prüfen | [KI-Analyse](./analysis.html) |

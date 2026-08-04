@@ -36,9 +36,9 @@ Le mode minimal masque la majeure partie de l'interface afin d'agrandir au maxim
 
 ![!640](/en/ulugo/minimal-mode.webp)
 
-### Par où commencer
+### Index des fonctionnalités
 
-| Objectif | Page |
+| Fonction | Documentation |
 | --- | --- |
 | Importer un goban depuis une photo ou compter une partie terminée | [Reconnaissance du goban](./scan.html) |
 | Revoir une partie avec l'IA | [Analyse IA](./analysis.html) |
