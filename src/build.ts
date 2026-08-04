@@ -11,7 +11,18 @@ type PageData = {
 };
 
 type RenderContext = {
+  pageIndex: string;
   sourceRelativePath: string;
+};
+
+type PageIndexEntry = {
+  anchor?: string;
+  level: 2 | 3;
+  title: string;
+};
+
+type MarkdownEnvironment = {
+  pageIndex?: PageIndexEntry[];
 };
 
 const rootDir = process.cwd();
@@ -63,6 +74,56 @@ markdown.core.ruler.push("custom_heading_anchor", (state) => {
     }
     headingToken.attrSet("id", match[1]);
     headingToken.attrJoin("class", "has-custom-anchor");
+  }
+});
+
+markdown.core.ruler.after("custom_heading_anchor", "page_index", (state) => {
+  const pageIndex = (state.env as MarkdownEnvironment).pageIndex;
+  if (!pageIndex) {
+    return;
+  }
+
+  const usedAnchors = new Set(
+    state.tokens.flatMap((token) => {
+      const anchor = token.type === "heading_open" ? token.attrGet("id") : null;
+      return anchor ? [anchor] : [];
+    }),
+  );
+
+  for (let index = 0; index < state.tokens.length - 1; index += 1) {
+    const headingToken = state.tokens[index];
+    const inlineToken = state.tokens[index + 1];
+    if (
+      headingToken.type !== "heading_open" ||
+      inlineToken.type !== "inline" ||
+      (headingToken.tag !== "h2" && headingToken.tag !== "h3")
+    ) {
+      continue;
+    }
+
+    const title = (inlineToken.children ?? [])
+      .map((child) => {
+        if (child.type === "softbreak" || child.type === "hardbreak") {
+          return " ";
+        }
+        return child.type === "text" || child.type === "code_inline" || child.type === "image"
+          ? child.content
+          : "";
+      })
+      .join("")
+      .trim();
+    if (!title) {
+      continue;
+    }
+
+    if (headingToken.tag === "h2") {
+      pageIndex.push({ level: 2, title });
+      continue;
+    }
+
+    const anchor = headingToken.attrGet("id") ?? uniqueAnchor(title, usedAnchors);
+    headingToken.attrSet("id", anchor);
+    pageIndex.push({ anchor, level: 3, title });
   }
 });
 
@@ -222,8 +283,9 @@ function tableAlignment(separator: string | undefined): string | undefined {
   return undefined;
 }
 
-function renderMarkdown(source: string): string {
+function renderMarkdown(source: string, collectPageIndex = true): { html: string; pageIndex: PageIndexEntry[] } {
   const rawBlocks: string[] = [];
+  const pageIndex: PageIndexEntry[] = [];
   const protectedSource = normalizeMarkdown(source).replace(
     /<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi,
     (block) => {
@@ -232,9 +294,42 @@ function renderMarkdown(source: string): string {
     },
   );
 
-  return markdown
-    .render(protectedSource)
+  const html = markdown
+    .render(protectedSource, collectPageIndex ? { pageIndex } : {})
     .replace(/<!--RAW_BLOCK_(\d+)-->/g, (_, index: string) => rawBlocks[Number(index)]);
+
+  return { html, pageIndex };
+}
+
+function uniqueAnchor(base: string, usedAnchors: Set<string>): string {
+  if (!usedAnchors.has(base)) {
+    usedAnchors.add(base);
+    return base;
+  }
+
+  for (let suffix = 2; ; suffix += 1) {
+    const candidate = `${base}-${suffix}`;
+    if (!usedAnchors.has(candidate)) {
+      usedAnchors.add(candidate);
+      return candidate;
+    }
+  }
+}
+
+function renderPageIndex(entries: PageIndexEntry[], pageTitle: string): string {
+  if (!entries.length) {
+    return "";
+  }
+
+  const title = markdown.utils.escapeHtml(pageTitle);
+  const items = entries.map((entry) => {
+    const title = markdown.utils.escapeHtml(entry.title);
+    return entry.level === 2
+      ? `<li class="page-index-separator">${title}</li>`
+      : `<li class="page-index-entry"><a href="#${markdown.utils.escapeHtml(entry.anchor ?? "")}">${title}</a></li>`;
+  });
+
+  return `<nav class="page-index" aria-label="${title}">\n<div class="page-index-title">${title}</div>\n<ul>\n${items.join("\n")}\n</ul>\n</nav>`;
 }
 
 function parseFrontMatter(source: string): { data: PageData; body: string } | null {
@@ -263,19 +358,20 @@ async function applyTemplate(
   const values: Record<string, string> = {
     baseUrl: "",
     content,
+    index: context.pageIndex,
     title: data.title ?? "",
   };
 
-  let rendered = template.replace(
-    /\{\{\s*([A-Za-z][\w.-]*)\s*\}\}/g,
-    (_, key: string) => getTemplateValue(key, values, data),
-  );
-
-  rendered = await replaceAsync(
-    rendered,
+  let rendered = await replaceAsync(
+    template,
     /\{\{\s*include:([^}]+?)\s*\}\}/g,
     async (_, includeTarget: string) =>
       readTemplateInclude(resolveIncludeTarget(includeTarget.trim(), data), context),
+  );
+
+  rendered = rendered.replace(
+    /\{\{\s*([A-Za-z][\w.-]*)\s*\}\}/g,
+    (_, key: string) => getTemplateValue(key, values, data),
   );
 
   if (rendered.includes("{{")) {
@@ -352,7 +448,7 @@ async function readTemplateInclude(includePath: string, context: RenderContext):
         const parsed = parseFrontMatter(source);
         const body = parsed ? parsed.body : source;
 
-        return path.extname(candidate) === ".md" ? renderMarkdown(body) : body;
+        return path.extname(candidate) === ".md" ? renderMarkdown(body, false).html : body;
       } catch (error) {
         if ((error as NodeJS.ErrnoException).code !== "ENOENT") {
           throw error;
@@ -414,9 +510,11 @@ async function processFile(relativePath: string): Promise<void> {
     return;
   }
 
-  let content = extension === ".md" ? renderMarkdown(parsed.body) : parsed.body;
+  const renderedMarkdown = extension === ".md" ? renderMarkdown(parsed.body) : null;
+  let content = renderedMarkdown?.html ?? parsed.body;
   if (parsed.data.layout) {
     content = await renderLayout(parsed.data.layout, content, parsed.data, {
+      pageIndex: renderPageIndex(renderedMarkdown?.pageIndex ?? [], parsed.data.title ?? ""),
       sourceRelativePath: relativePath,
     });
   }

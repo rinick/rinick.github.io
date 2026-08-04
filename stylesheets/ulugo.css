@@ -1,0 +1,138 @@
+body.ulugo-layout .ulugo-header {
+  height: 190px;
+  padding: 14px 0;
+  background-color: #f1b458;
+  background-image: linear-gradient(to right, #fff 0, rgba(255, 255, 255, 0) 400px), linear-gradient(rgba(255, 214, 133, 0.04), rgba(177, 102, 18, 0.08)), url(../images/ulugo/header-art.webp);
+  background-position: left top, left top, center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 100%, cover;
+  border-bottom-color: #b87826;
+}
+
+.ulugo-header .inner {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 24px;
+  margin: 0;
+  z-index: 1;
+}
+
+.ulugo-brand {
+  display: flex;
+  width: 138px;
+  height: 100%;
+  margin-top: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(8px);
+}
+
+.ulugo-brand-logo {
+  display: block;
+  width: 94px;
+  height: 94px;
+}
+
+.ulugo-brand-wordmark {
+  display: block;
+  width: 130px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.ulugo-header .ad {
+  background: transparent;
+}
+
+.ulugo-layout #main-content h1::before,
+.ulugo-layout #main-content h2::before,
+.ulugo-layout #main-content h3::before,
+.ulugo-layout #main-content h4::before,
+.ulugo-layout #main-content .heading-anchor,
+.ulugo-layout #main-content .heading-anchor:hover {
+  color: #f4b458;
+}
+
+.ulugo-layout aside#sidebar a.link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-sizing: content-box;
+  width: max-content;
+  max-width: calc(100% - 12px);
+  height: auto;
+  min-height: 20px;
+  padding: 5px;
+  overflow-wrap: anywhere;
+}
+
+.ulugo-layout aside#sidebar a.link > div {
+  position: static;
+  flex: 0 0 20px;
+}
+
+.page-index {
+  padding: 14px 0;
+  margin: 18px 0;
+  border-top: 1px solid #e4d2b7;
+  border-bottom: 1px solid #e4d2b7;
+}
+
+.page-index-title {
+  margin-bottom: 8px;
+  color: #8a5b20;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.page-index ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.page-index li {
+  padding: 0;
+  margin: 4px 0;
+}
+
+.page-index-entry a {
+  font-size: 13px;
+}
+
+.page-index-separator {
+  margin-top: 12px !important;
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.page-index-separator:first-child {
+  margin-top: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  body.ulugo-layout .ulugo-header {
+    height: 132px;
+    padding: 8px 0;
+  }
+
+  .ulugo-header .inner {
+    padding-left: 12px;
+  }
+
+  .ulugo-brand {
+    width: 100px;
+  }
+
+  .ulugo-brand-logo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .ulugo-brand-wordmark {
+    width: 96px;
+    margin-top: 3px;
+  }
+}
