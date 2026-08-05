@@ -44,3 +44,5 @@ Le mode minimal masque la majeure partie de l'interface afin d'agrandir au maxim
 | Revoir une partie avec l'IA | [Analyse IA](./analysis.html) |
 | Configurer l'environnement IA ou résoudre un problème de performances | [Environnement et matériel](./katago.html) |
 | Consulter ou modifier les raccourcis | [Raccourcis et gestes](./shortcut.html) |
+| Consulter les conseils d'utilisation de l'application | [Astuces](./tips.html) |
+| Consulter la licence, le périmètre du code source et les projets tiers | [Licence et remerciements](./license.html) |

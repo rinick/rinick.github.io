@@ -44,3 +44,5 @@ Minimal mode hides most of the interface so the board can fill as much of the wi
 | Review a game with AI | [AI Analysis](./analysis.html) |
 | Configure the AI runtime or troubleshoot performance | [Runtime and Hardware Setup](./katago.html) |
 | View or change keyboard shortcuts | [Shortcuts and Gestures](./shortcut.html) |
+| Review in-app usage tips | [Tips](./tips.html) |
+| Read about licensing, source availability, and third-party projects | [License and Acknowledgements](./license.html) |

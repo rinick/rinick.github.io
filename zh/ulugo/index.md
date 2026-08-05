@@ -44,3 +44,5 @@ sidebar: ./sidebar
 | 用 AI 复盘棋局 | [AI分析](./analysis.html) |
 | 配置 AI 运行环境或解决性能问题 | [运行环境与硬件配置](./katago.html) |
 | 查看或修改快捷键 | [快捷操作](./shortcut.html) |
+| 查看应用内的操作提示 | [小贴士](./tips.html) |
+| 了解开源范围、许可证与第三方项目 | [许可证与致谢](./license.html) |

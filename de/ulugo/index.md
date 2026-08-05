@@ -44,3 +44,5 @@ Der Minimalmodus blendet den größten Teil der Oberfläche aus, damit das Brett
 | Eine Partie mit KI prüfen | [KI-Analyse](./analysis.html) |
 | KI-Laufzeit konfigurieren oder Leistungsprobleme beheben | [Laufzeit und Hardware](./katago.html) |
 | Tastenkürzel ansehen oder ändern | [Tastenkürzel und Gesten](./shortcut.html) |
+| Hinweise zur Bedienung der Anwendung anzeigen | [Tipps](./tips.html) |
+| Lizenz, Umfang des offenen Quellcodes und Drittprojekte nachlesen | [Lizenz und Danksagung](./license.html) |
