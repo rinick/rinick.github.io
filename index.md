@@ -32,6 +32,7 @@ title:  "Rick's Deep Mess"
 
 | ------------- | ------------- | ------------- |
 | [![](/images/icon/ulugo.png)](/zh/ulugo/) | [乌鹭围棋](/zh/ulugo/) <br /> 围棋棋谱编辑与离线 AI 复盘工具，支持棋谱编辑、图像识别和本地 AI 分析 |
+| [![](/images/icon/rhendium.png)](https://github.com/rhendium/rhendium) | [Rhendium](https://github.com/rhendium/rhendium) <br /> 专为视觉测试设计的浏览器，在 Windows、macOS 和 Linux 上渲染出完全相同的像素 |
 | [<img src="/images/icon/chess.png" style="min-width:160px;width:160px" />](/zh/chess.html) | [乐高国际象棋设计](/zh/chess.html) <br /> 用乐高设计的国际象棋棋子 |
 | [![](/images/icon/amoeba.png)](/zh/amoeba.html) | [变形虫自动机](/zh/amoeba.html) <br /> 基于GLSL的细胞自动机模拟 |
 | [![](/images/icon/namerena.png)](/zh/namerena/) | [名字竞技场](/zh/namerena/) <br /> 基于文本的对战游戏，战斗的过程由输入的名字决定，固定的输入有固定的对战结果 |
