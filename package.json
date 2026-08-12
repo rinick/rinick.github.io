@@ -7,7 +7,7 @@
     "dev": "npm run build && node .build/dev.js"
   },
   "dependencies": {
-    "js-yaml": "^4.3.0",
+    "js-yaml": "^4.3.1",
     "markdown-it": "^14.1.0"
   },
   "devDependencies": {
