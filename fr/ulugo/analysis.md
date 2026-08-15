@@ -47,19 +47,22 @@ La variante principale est la ligne privilégiée par la recherche actuelle, et 
 
 ### Graphiques du panneau droit
 
-Le panneau droit propose trois graphiques, affichables séparément ou ensemble :
+Le panneau droit propose quatre graphiques, affichables séparément ou ensemble :
 
 | Graphique | Description |
 | --- | --- |
 | Score | Marge finale estimée après chaque coup, avec le komi et les règles actuelles. Au-dessus de l'axe : `B+` ; en dessous : `W+` |
-| Perte en points | Perte de marge estimée causée par le coup joué. Plus la barre est haute, plus la perte est importante ; les variations supérieures à environ 1 point sont mises en évidence |
-| Taux de victoire | Taux de victoire estimé des Noirs après chaque coup. Celui des Blancs vaut `100% − taux des Noirs`, avec `50%` comme référence d'équilibre |
+| Perte | Perte de marge estimée causée par le coup joué. Plus la barre est haute, plus la perte est importante ; les variations supérieures à environ 1 point sont mises en évidence |
+| Victoire | Taux de victoire estimé des Noirs après chaque coup. Celui des Blancs vaut `100% − taux des Noirs`, avec `50%` comme référence d'équilibre |
+| Intens. | Intensité actuelle du combat, mesurée par la marge perdue si le joueur passe au lieu de jouer le meilleur coup. La zone ombrée s'étend de façon symétrique autour de zéro |
 
 ![](/en/ulugo/chart-.webp)
 
 Survolez le graphique pour voir le numéro du coup, la marge, les taux de victoire des deux joueurs et la perte du coup. Cliquez pour aller directement à ce coup, ou utilisez la molette sur le graphique pour avancer et reculer.
 
 Lorsqu'un joueur possède une avance nette, le taux de victoire peut rester longtemps proche de `0%` ou `100%`. Dans ce cas, le score et la perte en points décrivent mieux la qualité de chaque coup.
+
+La **limite d'affichage de l'intensité** vaut `25` par défaut. L'axe ne s'élargit qu'avec l'intensité réelle, jusqu'à cette limite. Si le score ou la perte exige déjà un axe plus large, l'intensité peut utiliser cette plage sans l'élargir davantage à elle seule.
 
 ### Territoire et zone chaude
 

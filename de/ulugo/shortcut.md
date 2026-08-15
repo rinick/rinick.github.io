@@ -81,11 +81,11 @@ Unter macOS kann `Command` anstelle von `Ctrl` verwendet werden. Damit diese Nav
 | Koordinaten anzeigen | `` ` `` |
 | Nächsten Zug anzeigen | `Q` |
 | Zugnummern anzeigen | `R` |
-| Kommentare anzeigen | `O` |
+| Notizen anzeigen | `O` |
 | Prüf- / Bearbeitungsmodus (**Desktop**) | `W` |
 | Analysekreise anzeigen (**Desktop**) | `E` |
 | Gebiet anzeigen (**Desktop**) | `T` |
-| Punkteabstand / Punktverlust / Gewinnrate anzeigen (**Desktop**) | `Y` / `U` / `I` |
+| Punkte / Verlust / Sieg % anzeigen (**Desktop**) | `Y` / `U` / `I` |
 | Analyse starten oder stoppen (**Desktop**) | `Space` |
 | Tiefenanalyse (**Desktop**) | `Shift + Space` |
 | Besten Zug spielen (**Desktop**) | `Enter` |

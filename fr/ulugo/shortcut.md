@@ -81,11 +81,11 @@ Sous macOS, utilisez `Command` à la place de `Ctrl`. Afin de conserver ces mode
 | Afficher les coordonnées | `` ` `` |
 | Afficher le coup suivant | `Q` |
 | Afficher les numéros de coups | `R` |
-| Afficher les commentaires | `O` |
+| Afficher les notes | `O` |
 | Mode revue / édition (**Bureau**) | `W` |
 | Afficher les cercles d'analyse (**Bureau**) | `E` |
 | Afficher le territoire (**Bureau**) | `T` |
-| Afficher score / perte en points / taux de victoire (**Bureau**) | `Y` / `U` / `I` |
+| Afficher Score / Perte / Victoire (**Bureau**) | `Y` / `U` / `I` |
 | Lancer ou arrêter l'analyse (**Bureau**) | `Space` |
 | Analyse profonde (**Bureau**) | `Shift + Space` |
 | Jouer le meilleur coup (**Bureau**) | `Enter` |

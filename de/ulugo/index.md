@@ -30,9 +30,11 @@ Der Bearbeitungsmodus dient zum Erstellen und Ordnen von Partieaufzeichnungen:
 
 Für Fotoimport und Auszählung nach der Partie siehe [Bilderkennung des Go-Bretts](./scan.html). Häufige Tastatur- und Mausaktionen stehen unter [Tastenkürzel und Gesten](./shortcut.html).
 
+Informationen zur Zug-für-Zug-Mitschrift, zum Fortsetzen per Foto und zum Korrigieren eines früher falsch notierten Zuges stehen unter [Partie mitschreiben](./record.html).
+
 ### Minimalmodus
 
-Der Minimalmodus blendet den größten Teil der Oberfläche aus, damit das Brett möglichst viel Platz einnimmt. Er eignet sich zum Mitschreiben einer Partie vor Ort auf Telefon oder Tablet. Über die runde Schaltfläche oben rechts lassen sich vorübergehend Zugnummern, Koordinaten, Grundwerkzeuge und das rechte Panel öffnen.
+Der Minimalmodus blendet den größten Teil der Oberfläche aus, damit das Brett möglichst viel Platz einnimmt. Er eignet sich besonders zum [Mitschreiben einer Partie](./record.html) auf Telefon oder Tablet. Über die runde Schaltfläche oben rechts lassen sich vorübergehend Zugnummern, Koordinaten, Grundwerkzeuge und das rechte Panel öffnen.
 
 ![!640](/en/ulugo/minimal-mode.webp)
 
@@ -40,6 +42,7 @@ Der Minimalmodus blendet den größten Teil der Oberfläche aus, damit das Brett
 
 | Funktion | Dokumentation |
 | --- | --- |
+| Zug für Zug mitschreiben, per Foto fortsetzen oder einen falsch notierten Zug korrigieren | [Partie mitschreiben](./record.html) |
 | Ein Brett aus einem Foto übernehmen oder eine beendete Partie auszählen | [Bilderkennung des Go-Bretts](./scan.html) |
 | Eine Partie mit KI prüfen | [KI-Analyse](./analysis.html) |
 | KI-Laufzeit konfigurieren oder Leistungsprobleme beheben | [Laufzeit und Hardware](./katago.html) |

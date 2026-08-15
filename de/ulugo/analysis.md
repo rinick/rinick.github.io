@@ -47,19 +47,22 @@ Die Hauptvariante ist die von der aktuellen Suche bevorzugte Folge, nicht die ei
 
 ### Diagramme im rechten Panel
 
-Das rechte Panel bietet drei Diagramme, die einzeln oder gemeinsam angezeigt werden können:
+Das rechte Panel bietet vier Diagramme, die einzeln oder gemeinsam angezeigt werden können:
 
 | Diagramm | Beschreibung |
 | --- | --- |
-| Punkteabstand | Geschätzter Endabstand nach jedem Zug einschließlich Komi und aktueller Regeln. Oberhalb der Mittellinie liegt `B+`, darunter `W+` |
-| Punktverlust | Geschätzter Verlust durch den gespielten Zug. Je höher der Balken, desto größer der Verlust; Änderungen über etwa 1 Punkt werden hervorgehoben |
-| Gewinnrate | Geschätzte Gewinnrate von Schwarz nach jedem Zug. Die von Weiß beträgt `100% − Gewinnrate Schwarz`; `50%` ist die ausgeglichene Referenz |
+| Punkte | Geschätzter Endabstand nach jedem Zug einschließlich Komi und aktueller Regeln. Oberhalb der Mittellinie liegt `B+`, darunter `W+` |
+| Verlust | Geschätzter Verlust durch den gespielten Zug. Je höher der Balken, desto größer der Verlust; Änderungen über etwa 1 Punkt werden hervorgehoben |
+| Sieg % | Geschätzte Gewinnrate von Schwarz nach jedem Zug. Die von Weiß beträgt `100% − Gewinnrate Schwarz`; `50%` ist die ausgeglichene Referenz |
+| Intens. | Aktuelle Kampfintensität, gemessen am Punkteverlust eines Passzuges gegenüber dem besten Zug. Die Fläche wird symmetrisch ober- und unterhalb der Nulllinie dargestellt |
 
 ![](/en/ulugo/chart-.webp)
 
 Beim Überfahren eines Diagramms werden Zugnummer, Punkteabstand, beide Gewinnraten und der Verlust des Zuges angezeigt. Ein Klick springt direkt zum Zug; mit dem Mausrad über dem Diagramm lässt sich vor- und zurückgehen.
 
 Bei deutlicher Führung kann die Gewinnrate lange nahe `0%` oder `100%` bleiben. Dann eignen sich Punkteabstand und Punktverlust besser zur Bewertung einzelner Züge.
+
+Die **Anzeigegrenze der Intensität** ist standardmäßig `25`. Die Achse wächst nur mit der tatsächlichen Intensität bis zu dieser Grenze. Benötigen Punkte oder Verlust bereits eine breitere Achse, darf die Intensität diesen Bereich nutzen, erweitert ihn allein aber nicht weiter.
 
 ### Gebiet und Hot Zone
 

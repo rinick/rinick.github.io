@@ -47,19 +47,22 @@ The principal variation is the main line from the current search, not the only p
 
 ### Charts
 
-The right panel provides three charts, which can be displayed separately or together:
+The right panel provides four charts, which can be displayed separately or together:
 
 | Chart | Description |
 | --- | --- |
 | Score | Estimated final score after each move, including komi and the current rules. The area above the center line is `B+`; below it is `W+` |
 | Point loss | Estimated score lost by the played move. Taller bars indicate larger losses; changes above about 1 point are highlighted |
 | Win rate | Black's estimated win rate after each move. White's win rate is `100% − Black's win rate`, with `50%` as the even-game baseline |
+| Intensity | Current fighting intensity, measured by the score lost if the current player passes instead of playing the best move. The shaded area extends equally above and below zero |
 
 ![](./chart-.webp)
 
 Hover over a chart to view the move number, score, both players' win rates, and point loss. Click to jump directly to that move, or use the mouse wheel over the chart to move backward and forward.
 
 In a game with a large lead, win rate may stay close to `0%` or `100%` for a long time. Score and point loss are usually more informative for comparing individual moves in that situation.
+
+The **intensity display limit** defaults to `25`. The axis expands only as the actual intensity rises, up to this limit. If the score or point-loss chart already needs a wider axis, intensity may use that wider range, but intensity alone never expands it further.
 
 ### Territory and Hot Zone
 

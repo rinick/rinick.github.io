@@ -30,9 +30,11 @@ Edit mode is designed for creating and organizing game records:
 
 For photo import and post-game scoring, see [Board Image Recognition](./scan.html). For common keyboard and mouse actions, see [Shortcuts and Gestures](./shortcut.html).
 
+For move-by-move recording, periodic photo updates, or correcting an earlier misrecorded move, see [Game Recording](./record.html).
+
 ### Minimal Mode
 
-Minimal mode hides most of the interface so the board can fill as much of the window as possible. It is useful for recording face-to-face games on a phone or tablet. The round button in the upper-right corner provides temporary access to move numbers, coordinates, basic tools, and the right panel.
+Minimal mode hides most of the interface so the board can fill as much of the window as possible. It is especially useful for [recording games](./record.html) on a phone or tablet. The round button in the upper-right corner provides temporary access to move numbers, coordinates, basic tools, and the right panel.
 
 ![!640](./minimal-mode.webp)
 
@@ -40,6 +42,7 @@ Minimal mode hides most of the interface so the board can fill as much of the wi
 
 | Feature | Documentation |
 | --- | --- |
+| Record move by move, continue from photos, or correct a misrecorded move | [Game Recording](./record.html) |
 | Import a board from a photo or score a finished game | [Board Image Recognition](./scan.html) |
 | Review a game with AI | [AI Analysis](./analysis.html) |
 | Configure the AI runtime or troubleshoot performance | [Runtime and Hardware Setup](./katago.html) |
