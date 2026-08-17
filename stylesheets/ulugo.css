@@ -1,5 +1,4 @@
 body.ulugo-layout .ulugo-header {
-  height: 190px;
   padding: 14px 0;
   background-color: #f1b458;
   background-image: linear-gradient(to right, #fff 0, rgba(255, 255, 255, 0) 400px), linear-gradient(rgba(255, 214, 133, 0.04), rgba(177, 102, 18, 0.08)), url(../images/ulugo/header-art.webp);
@@ -112,9 +111,25 @@ body.ulugo-layout .ulugo-header {
   margin-top: 0 !important;
 }
 
+@media only screen and (max-width: 959px) {
+  .ulugo-brand {
+    margin-top: 0;
+    transform: none;
+  }
+
+  .ulugo-brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ulugo-brand-wordmark {
+    width: 68px;
+    margin-top: 3px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   body.ulugo-layout .ulugo-header {
-    height: 132px;
     padding: 8px 0;
   }
 
@@ -124,15 +139,5 @@ body.ulugo-layout .ulugo-header {
 
   .ulugo-brand {
     width: 100px;
-  }
-
-  .ulugo-brand-logo {
-    width: 68px;
-    height: 68px;
-  }
-
-  .ulugo-brand-wordmark {
-    width: 96px;
-    margin-top: 3px;
   }
 }
