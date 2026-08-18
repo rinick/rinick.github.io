@@ -17,6 +17,10 @@ Le mode revue affiche les coups recommandés par l'IA, le territoire, l'écart d
 
 ![!600](/en/ulugo/analysis.webp)
 
+Ulugo permet d'ouvrir directement des parties depuis Fox Weiqi, Tygem, KGS, Pandanet et OGS. L'ouverture et l'enregistrement de parties sur Google Drive sont également pris en charge.
+
+![!600](/en/ulugo/open-from.webp)
+
 ### Mode édition
 
 Le mode édition sert à créer et organiser les parties :

@@ -17,6 +17,10 @@ Der Prüfmodus zeigt KI-Empfehlungen, Gebiet, Punkteabstand und den Verlauf der 
 
 ![!600](/en/ulugo/analysis.webp)
 
+Mit Ulugo lassen sich Partieaufzeichnungen direkt von Fox Weiqi, Tygem, KGS, Pandanet und OGS öffnen. Auch das Öffnen und Speichern über Google Drive wird unterstützt.
+
+![!600](/en/ulugo/open-from.webp)
+
 ### Bearbeitungsmodus
 
 Der Bearbeitungsmodus dient zum Erstellen und Ordnen von Partieaufzeichnungen:

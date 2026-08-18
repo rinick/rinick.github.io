@@ -17,6 +17,10 @@ Review mode displays AI-recommended moves, territory, score, and win-rate change
 
 ![!600](./analysis.webp)
 
+Ulugo can open game records directly from Fox Weiqi, Tygem, KGS, Pandanet, and OGS. Game records can also be opened from and saved to Google Drive.
+
+![!600](./open-from.webp)
+
 ### Edit Mode
 
 Edit mode is designed for creating and organizing game records:

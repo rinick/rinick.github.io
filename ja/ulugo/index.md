@@ -17,6 +17,10 @@ Ulugo は、囲碁の棋譜編集とオフライン AI 検討のためのツー�
 
 ![!600](/en/ulugo/analysis.webp)
 
+Ulugo では、Fox Weiqi、Tygem、KGS、Pandanet、OGS から棋譜を直接開くことができます。Google Drive から棋譜を開いたり、Google Drive に保存したりすることにも対応しています。
+
+![!600](/en/ulugo/open-from.webp)
+
 ### 編集モード
 
 編集モードでは棋譜を作成・整理できます。

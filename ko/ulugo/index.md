@@ -17,6 +17,10 @@ Ulugo는 바둑 기보 편집과 오프라인 AI 복기를 위한 도구입니�
 
 ![!600](/en/ulugo/analysis.webp)
 
+Ulugo에서는 Fox Weiqi, Tygem, KGS, Pandanet, OGS에서 기보를 바로 열 수 있습니다. Google Drive에서 기보를 열고 저장하는 기능도 지원합니다.
+
+![!600](/en/ulugo/open-from.webp)
+
 ### 편집 모드
 
 편집 모드에서는 기보를 만들고 정리할 수 있습니다.

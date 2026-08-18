@@ -17,6 +17,10 @@ sidebar: ./sidebar
 
 ![!600](./analysis.webp)
 
+乌鹭围棋可以直接从野狐围棋、弈城围棋、KGS、Pandanet 和 OGS 打开棋谱，还可以通过 Google Drive 打开和保存棋谱。
+
+![!600](/en/ulugo/open-from.webp)
+
 ### 编辑模式
 
 编辑模式用于创建和整理棋谱：
