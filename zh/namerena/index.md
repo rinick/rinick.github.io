@@ -4,7 +4,7 @@ title:  "名字竞技场"
 ---
 
 <img style="float: left;margin-right:-8px;transform: translate(-16px,-8px);" src="images/logo64.png"/>
-**名字竞技场** 是一款基于文本的对战游戏。是十年前Flash游戏 **MD5大作战** 的续作。<br/>
+**名字竞技场** 是一款基于文本的对战游戏。是20年前 Flash 游戏 **[MD5大作战](/zh/md5.html)** 的续作。<br/>
 
 游戏地址： [//deepmess.com/namerena](//deepmess.com/namerena)
 

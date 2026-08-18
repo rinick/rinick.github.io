@@ -3,7 +3,7 @@ layout: page
 title:  "MD5大作战"
 ---
 
-MD5大作战是二十年前制作的 Flash 小游戏，现在已经转换为无需插件的 HTML5 版本。后续作品是[名字竞技场](/zh/namerena/)。
+MD5大作战是20年前制作的 Flash 小游戏，现在已经转换为无需插件的 HTML5 版本。后续作品是[名字竞技场](/zh/namerena/)。
 
 
 ------
