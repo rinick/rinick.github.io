@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="MD5作战 Flash v1.20 的纯 HTML5 复刻版" />
+    <title>MD5作战 v1.20</title>
+    <link rel="stylesheet" href="styles.css?v=13" />
+    <script src="app.js?v=10" defer></script>
+  </head>
+  <body>
+    <main id="md5war" aria-label="MD5作战 v1.20">
+      <img class="stage-art" src="assets/stage.svg" alt="" draggable="false" />
+
+      <img class="logo-animation" src="assets/logo-animation.svg" alt="" draggable="false" />
+
+      <span class="face-slot face-slot-left">
+        <img id="face-left" class="face" alt="" draggable="false" />
+      </span>
+      <span class="face-slot face-slot-right">
+        <img id="face-right" class="face" alt="" draggable="false" />
+      </span>
+      <span id="bar-left" class="hp-bar hp-bar-left"></span>
+      <span id="bar-right" class="hp-bar hp-bar-right"></span>
+
+      <label class="name-field name-field-left">
+        <span>左方姓名</span>
+        <input id="name-left" type="text" autocomplete="off" />
+      </label>
+      <label class="name-field name-field-right">
+        <span>右方姓名</span>
+        <input id="name-right" type="text" autocomplete="off" />
+      </label>
+
+      <span id="hp-left" class="number hp-current hp-current-left">0</span>
+      <span id="max-hp-left" class="number hp-max hp-max-left">0</span>
+      <span id="hp-right" class="number hp-current hp-current-right">0</span>
+      <span id="max-hp-right" class="number hp-max hp-max-right">0</span>
+
+      <span id="atk-left" class="number stat stat-left stat-atk">0</span>
+      <span id="def-left" class="number stat stat-left stat-def">0</span>
+      <span id="spd-left" class="number stat stat-left stat-spd">0</span>
+      <span id="acr-left" class="number stat stat-left stat-acr">0</span>
+      <span id="luk-left" class="number stat stat-left stat-luk">0</span>
+      <span id="atk-right" class="number stat stat-right stat-atk">0</span>
+      <span id="def-right" class="number stat stat-right stat-def">0</span>
+      <span id="spd-right" class="number stat stat-right stat-spd">0</span>
+      <span id="acr-right" class="number stat stat-right stat-acr">0</span>
+      <span id="luk-right" class="number stat stat-right stat-luk">0</span>
+
+      <div id="battle-output" class="battle-output" aria-live="polite"></div>
+      <button id="fight" type="button" aria-label="Fight"></button>
+    </main>
+  </body>
+</html>

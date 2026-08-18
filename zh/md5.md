@@ -3,15 +3,17 @@ layout: page
 title:  "MD5大作战"
 ---
 
-MDS大作战是十年期做的Flash小游戏，已经被新版游戏[名字竞技场](http://namerena.github.io/help/)取代
+MD5大作战是二十年前制作的 Flash 小游戏，现在已经转换为无需插件的 HTML5 版本。后续作品是[名字竞技场](/zh/namerena/)。
 
 
 ------
 
 
-<span class="postbody"><script src='/js/swfobject.js' type='text/javascript'></script>
-<div id='flashcontent' style='width:700px;height:500px'>MD5大作战</div> 
-<script type='text/javascript'> 
-var so = new SWFObject('/swf/md5war.swf', 'mymovie', '700', '500', '9', '#FFFFFF'); 
-so.write('flashcontent'); 
-</script>
+<div style="position:relative;width:100%;max-width:700px;aspect-ratio:7/5;overflow:hidden;background:#fff">
+  <iframe
+    src="./md5war/"
+    title="MD5大作战 HTML5版"
+    style="position:absolute;inset:0;width:100%;height:100%;border:0"
+    loading="eager"
+  ></iframe>
+</div>

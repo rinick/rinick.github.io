@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  background: #eeeeec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 280px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  overflow: auto;
+}
+
+#md5war {
+  position: relative;
+  container-type: inline-size;
+  width: min(700px, 100vw);
+  aspect-ratio: 7 / 5;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: SimSun, "宋体", serif;
+}
+
+.stage-art {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.logo-animation {
+  position: absolute;
+  z-index: 3;
+  top: 82.2%;
+  width: 29.229%;
+  height: 17.99%;
+  user-select: none;
+}
+
+.face-slot {
+  position: absolute;
+  z-index: 4;
+  top: 11.25%;
+  display: grid;
+  width: 3.757%;
+  height: 5.26%;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.face-slot-left {
+  left: 0.493%;
+}
+
+.face-slot-right {
+  left: 23.543%;
+}
+
+.face {
+  display: block;
+  width: 76.046%;
+  height: 76.046%;
+}
+
+.face:not([src]) {
+  display: none;
+}
+
+.hp-bar {
+  position: absolute;
+  z-index: 1;
+  top: 15.28%;
+  display: none;
+  width: 1.571%;
+  height: 15.36%;
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  pointer-events: none;
+}
+
+.hp-bar-left {
+  left: 0.286%;
+}
+
+.hp-bar-right {
+  left: 25.871%;
+}
+
+.name-field {
+  position: absolute;
+  z-index: 3;
+  top: 1.14%;
+  width: 11.893%;
+  height: 3.2%;
+}
+
+.name-field-left {
+  left: 0.471%;
+}
+
+.name-field-right {
+  left: 15.336%;
+  width: 11.964%;
+}
+
+.name-field span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.name-field input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0.143cqw solid #000000;
+  border-radius: 0;
+  padding: 0 0.143cqw 0.286cqw;
+  color: #000000;
+  background: #ffffff;
+  font: 1.714cqw/1.714cqw SimSun, "宋体", serif;
+  outline: none;
+}
+
+.number {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  overflow: hidden;
+  color: #000000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.stat {
+  width: 9.143%;
+  height: 3.6%;
+  padding-bottom: 0.286cqw;
+  text-align: center;
+  font-size: 2cqw;
+  line-height: 2.286cqw;
+}
+
+.stat-left {
+  left: 2.079%;
+}
+
+.stat-right {
+  left: 16.371%;
+}
+
+.stat-atk {
+  top: 9.87%;
+}
+
+.stat-def {
+  top: 14.33%;
+}
+
+.stat-spd {
+  top: 18.79%;
+}
+
+.stat-acr {
+  top: 23.25%;
+}
+
+.stat-luk {
+  top: 27.74%;
+}
+
+.hp-current {
+  top: 5.39%;
+  width: 4%;
+  height: 3.6%;
+  padding-bottom: 0.286cqw;
+  text-align: right;
+  font-size: 2cqw;
+  line-height: 2.286cqw;
+}
+
+.hp-current-left {
+  left: 2.928%;
+}
+
+.hp-current-right {
+  left: 18.714%;
+}
+
+.hp-max {
+  top: 6.2%;
+  width: 3.5%;
+  height: 3.2%;
+  font-size: 1.714cqw;
+  line-height: 2cqw;
+}
+
+.hp-max-left {
+  left: 7.829%;
+}
+
+.hp-max-right {
+  left: 23.586%;
+}
+
+.battle-output {
+  position: absolute;
+  z-index: 3;
+  left: 28.293%;
+  top: 1.2%;
+  width: 70.4%;
+  height: 97.2%;
+  padding: 3px 0 0 3px;
+  overflow: auto;
+  color: #000000;
+  background: transparent;
+  font: 1.714cqw/2cqw SimSun, "宋体", serif;
+  overflow-wrap: break-word;
+  scrollbar-width: thin;
+}
+
+#fight {
+  position: absolute;
+  z-index: 4;
+  left: 20.129%;
+  top: 33.03%;
+  width: 5.814%;
+  height: 3.63%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  touch-action: manipulation;
+}
