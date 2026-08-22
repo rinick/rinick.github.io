@@ -53,24 +53,6 @@ body.ulugo-layout .ulugo-header {
   color: #f4b458;
 }
 
-.ulugo-layout aside#sidebar a.link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  box-sizing: content-box;
-  width: max-content;
-  max-width: calc(100% - 12px);
-  height: auto;
-  min-height: 20px;
-  padding: 5px;
-  overflow-wrap: anywhere;
-}
-
-.ulugo-layout aside#sidebar a.link > div {
-  position: static;
-  flex: 0 0 20px;
-}
-
 .page-index {
   padding: 14px 0;
   margin: 18px 0;

@@ -622,27 +622,43 @@ aside a.button {
 }
 
 aside a.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  min-height: 24px;
+  margin: 2px 0;
+  padding: 9px 10px;
+  color: #44515d;
+  font-size: 15px;
+  font-weight: 500;
   line-height: 1.2;
-  position: relative;
-  display: block;
-  width: 70px;
-  height: 20px;
-  margin: 5px 0;
-  padding: 5px 5px 5px 30px;
-  font-size: 16px;
-  border: rgba(46,126,213,0.3) solid 1px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 aside a.link:hover {
-  border: rgba(46,126,213,0.5) solid 1px;
+  color: #2268b2;
+  background-color: rgba(46, 126, 213, 0.08);
+  transform: translateX(2px);
+}
+
+aside a.link:focus-visible {
+  color: #2268b2;
+  background-color: rgba(46, 126, 213, 0.08);
+  outline: 2px solid rgba(46, 126, 213, 0.45);
+  outline-offset: 2px;
 }
 
 aside a.link > div {
-  position: absolute;
-  background-size: 20px 20px;
+  flex: 0 0 20px;
   width: 20px;
   height: 20px;
-  top:4px;
-  left:4px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 code, pre {
