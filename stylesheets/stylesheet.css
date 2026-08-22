@@ -642,7 +642,6 @@ aside a.link {
 aside a.link:hover {
   color: #2268b2;
   background-color: rgba(46, 126, 213, 0.08);
-  transform: translateX(2px);
 }
 
 aside a.link:focus-visible {
