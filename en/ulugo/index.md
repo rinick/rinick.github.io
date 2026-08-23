@@ -1,6 +1,6 @@
 ---
 layout: ulugo
-title: Ulugo
+title: Ulugo Guide
 sidebar: ./sidebar
 ---
 
