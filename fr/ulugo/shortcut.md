@@ -33,6 +33,8 @@ Sous macOS, utilisez `Command` à la place de `Ctrl`. Afin de conserver ces mode
 - `Ctrl + V` : ouvrir un SGF ou une image depuis le presse-papiers ; ce raccourci est réservé et ne peut pas être réaffecté ;
 - `Esc` : quitter le résultat du comptage ou revenir à l'outil **Jeu alterné** ;
 - `Shift + clic` sur le goban : cliquer sur une pierre existante pour aller à son coup, ou sur un coup futur pour avancer jusqu'à lui ;
+- clic droit avec **Insérer un coup** : supprimer un coup et sélectionner la position précédente ;
+- clic droit avec **Supprimer le coup** : insérer un coup ;
 - molette sur le goban : afficher le coup précédent ou suivant ;
 - `Alt + clic` sur un coup recommandé : afficher sa variante principale (**Bureau**).
 
@@ -61,7 +63,8 @@ Sous macOS, utilisez `Command` à la place de `Ctrl`. Afin de conserver ces mode
 | Passer | `P` |
 | Jeu alterné | `1` |
 | Placer une pierre noire / blanche | `2` / `3` |
-| Remplacer le coup | `4` |
+| Insérer un coup | `4` |
+| Supprimer le coup | Non assigné |
 | Ajouter texte / cercle / carré / triangle / croix | `5` / `6` / `7` / `8` / `9` |
 | Effacer une annotation | `0` |
 

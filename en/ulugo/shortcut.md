@@ -33,6 +33,8 @@ On macOS, use `Command` instead of `Ctrl`. To preserve these navigation actions,
 - `Ctrl + V`: Open an SGF file or image from the clipboard. This shortcut is reserved and cannot be reassigned;
 - `Esc`: Exit the scoring result, or return to the **Auto play** tool;
 - `Shift + click` on the board: Click an existing stone to jump to the move that played it, or click a future move to move forward to it;
+- Right-click while using **Insert move**: Delete a move and select the position before it;
+- Right-click while using **Delete move**: Insert a move;
 - Mouse wheel over the board: Move to the previous or next move;
 - `Alt + click` a top move: Show its principal variation (**Desktop**).
 
@@ -61,7 +63,8 @@ On macOS, use `Command` instead of `Ctrl`. To preserve these navigation actions,
 | Pass | `P` |
 | Auto play | `1` |
 | Place black / white stone | `2` / `3` |
-| Replace move | `4` |
+| Insert move | `4` |
+| Delete move | Unassigned |
 | Add label / circle / square / triangle / cross | `5` / `6` / `7` / `8` / `9` |
 | Erase markup | `0` |
 

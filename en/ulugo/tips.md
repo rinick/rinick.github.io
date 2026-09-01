@@ -13,8 +13,8 @@ This page collects the tips shown in Ulugo and groups them by platform.
 | Quick navigation | Hold `Shift` and click a stone to jump to the move that played it; click a future move to move forward to it |
 | Mark connected stones | With a label or shape tool selected, double-click a stone to apply the current markup to its entire connected group of the same color |
 | Auto-increment labels | Text markup advances automatically, such as `A → B` or `1 → 2`; adding it with the right mouse button keeps the current text unchanged |
-| Correct a misrecorded move | Select the incorrect move and use **Replace move**. Ulugo returns to the previous position so you can correct the point without replaying later moves |
-| Replace or insert a move | In **Replace move** mode, left-click to replace the next move and right-click to insert a move before it. If the next node is a setup move, Ulugo inserts automatically |
+| Insert moves | Use **Insert move** to add moves on one temporary branch. Right-click deletes a move instead and selects the position before it |
+| Navigate while editing moves | Entering **Insert move** or **Delete move** does not change the current position. Switching between them, or selecting the current branch or its earlier trunk, keeps the edit session active. Selecting another branch exits it |
 | Import an image | Choose a board image while opening a file to recognize the position and create an SGF. See [Board Image Recognition](./scan.html) for details |
 | Import from the clipboard | Press `Ctrl + V` to open SGF text or an image directly from the clipboard |
 

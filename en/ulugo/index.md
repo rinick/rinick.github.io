@@ -6,9 +6,9 @@ sidebar: ./sidebar
 
 Ulugo is a Go game record editor and offline AI review tool. You can record games in a browser, edit SGF files, import board positions from photos, and score finished games. The desktop app also provides local AI analysis.
 
-| Version | Best for |
+| Version | Key features |
 | --- | --- |
-| [Web app](https://ulugo.com) | Recording and editing games, Minimal mode, image recognition, and post-game scoring—no installation required |
+| [Web app](https://ulugo.com) | Recording and editing games, Minimal mode, image recognition, and post-game scoring, available without installation at [https://ulugo.com](https://ulugo.com) |
 | [Desktop app](https://github.com/rinick/ulugo/releases/latest) | Everything in the web app, plus local AI analysis |
 
 ### Review Mode
@@ -27,7 +27,7 @@ Edit mode is designed for creating and organizing game records:
 
 - Open, edit, and save SGF files;
 - Add variations, comments, and board markup;
-- Correct misrecorded moves and reorder variations;
+- Insert or delete missing or incorrect moves, and reorder variations;
 - Recognize a board position from a photo and create an SGF file.
 
 ![!600](./edit-mode.webp)

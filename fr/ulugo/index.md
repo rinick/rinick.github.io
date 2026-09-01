@@ -6,9 +6,9 @@ sidebar: ./sidebar
 
 Ulugo est un éditeur de parties de go et un outil de revue IA hors ligne. Il permet de noter une partie dans le navigateur, de modifier des fichiers SGF, d'importer une position depuis une photo et de compter le score après la partie. L'application de bureau propose aussi une analyse IA locale.
 
-| Version | Usages principaux |
+| Version | Fonctionnalités principales |
 | --- | --- |
-| [Version web](https://ulugo.com) | Notation et édition, mode minimal, reconnaissance d'image et comptage après la partie, sans installation |
+| [Version web](https://ulugo.com) | Notation et édition, mode minimal, reconnaissance d'image et comptage après la partie, sans installation sur [https://ulugo.com](https://ulugo.com) |
 | [Application de bureau](https://github.com/rinick/ulugo/releases/latest) | Toutes les fonctions web, plus l'analyse IA locale |
 
 ### Mode revue
@@ -27,7 +27,7 @@ Le mode édition sert à créer et organiser les parties :
 
 - ouvrir, modifier et enregistrer des fichiers SGF ;
 - ajouter des variantes, des commentaires et des annotations sur le goban ;
-- corriger un coup mal saisi et réordonner les variantes ;
+- insérer ou supprimer des coups erronés ou manquants, et réordonner les variantes ;
 - reconnaître une position depuis une photo et créer un SGF.
 
 ![!600](/en/ulugo/edit-mode.webp)

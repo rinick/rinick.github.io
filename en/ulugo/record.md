@@ -14,20 +14,16 @@ On a phone or tablet, Minimal mode lets the board occupy as much of the screen a
 
 ![!620](./minimal-mode.webp)
 
-### Correcting an earlier move
+### Inserting or deleting moves
 
-If you discover that an earlier move was recorded at the wrong point, you do not need to delete and replay every later stone:
+- Select **⨂ Delete move**, then click a stone in the current position or among the future moves to delete it.
+- Select **⨁ Insert move**, then click the board to add a move after the current position. Right-click instead to delete a move and select the position before it.
 
-![!600](./replace.webp)
+Entering either tool or switching between them does not change the current position. All changes are combined in one temporary variation. During editing, selecting another variation exits the session.
 
-1. Select the incorrect move in the move tree. You can also hold `Shift` and click a stone on the board to jump to its move;
-2. Select the **Replace move** tool. Ulugo returns to the position before the incorrect move;
-3. Left-click the correct point to replace the next move. Later moves that remain legal are preserved and shown as translucent stones on the board;
-   - Newly added moves are marked with a <span style='color:#0064ff'>blue shadow</span>, while replaced moves are marked with a <span style='color:#ff4d4f'>red shadow</span>;
-   - To insert a missing move before the next move instead of replacing it, place the stone with a right-click;
-   - In the **Replace move** tool, the delete button removes only the current move;
-4. After checking the result, click ✓ or press `Enter` to confirm;
-   - Click X or press `Esc` to discard replacement mode and restore the original board state.
+Later legal moves are preserved. Inserted and deleted moves are marked with a <span style='color:#0064ff'>blue shadow</span> and a <span style='color:#ff4d4f'>red shadow</span>, respectively. Click ✓ or press `Enter` to confirm. Click X or press `Esc` to cancel and restore the original game record.
+
+You can combine both tools. To correct a misrecorded move, delete the incorrect move, then insert the correct one.
 
 ### Recording with photos
 
@@ -39,8 +35,8 @@ This feature works only on the main branch of the game record.
 
 ### Converting a board setup into regular moves
 
-After a photo is added to the game record, you can keep its photographed-position node temporarily. If you know the actual order of play, you can use **Replace move** mode to convert it into regular moves.
+After adding a photo to the game record, you can keep its photographed-position node temporarily. If you know the actual order of play, select **Insert move** and enter the moves in sequence.
 
 ![!600](./replace-scan-move.webp)
 
-When you confirm, the photographed-position node immediately following the new moves is deleted.
+Content after the photographed-position node remains if it is still valid. Confirming the move edit deletes the photographed-position node immediately after the added moves; canceling restores the game record from before the edit.

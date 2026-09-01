@@ -6,9 +6,9 @@ sidebar: ./sidebar
 
 Ulugo ist ein Editor für Go-Partieaufzeichnungen und ein Offline-Werkzeug zur KI-Analyse. Im Browser lassen sich Partien mitschreiben, SGF-Dateien bearbeiten, Stellungen aus Fotos übernehmen und beendete Partien auszählen. Die Desktop-App bietet zusätzlich lokale KI-Analyse.
 
-| Version | Geeignet für |
+| Version | Hauptfunktionen |
 | --- | --- |
-| [Webversion](https://ulugo.com) | Mitschrift und Bearbeitung, Minimalmodus, Bilderkennung und Auszählung nach der Partie, ohne Installation |
+| [Webversion](https://ulugo.com) | Mitschrift und Bearbeitung, Minimalmodus, Bilderkennung und Auszählung nach der Partie, ohne Installation unter [https://ulugo.com](https://ulugo.com) |
 | [Desktop-App](https://github.com/rinick/ulugo/releases/latest) | Alle Webfunktionen plus lokale KI-Analyse |
 
 ### Prüfmodus
@@ -27,7 +27,7 @@ Der Bearbeitungsmodus dient zum Erstellen und Ordnen von Partieaufzeichnungen:
 
 - SGF-Dateien öffnen, bearbeiten und speichern
 - Varianten, Kommentare und Brettmarkierungen hinzufügen
-- falsch notierte Züge ersetzen und Varianten umordnen
+- falsch notierte oder fehlende Züge einfügen bzw. löschen und Varianten umordnen
 - eine Stellung aus einem Foto erkennen und als SGF anlegen
 
 ![!600](/en/ulugo/edit-mode.webp)

@@ -14,20 +14,16 @@ Auf einem Telefon oder Tablet lässt der Minimalmodus das Brett möglichst viel 
 
 ![!620](/en/ulugo/minimal-mode.webp)
 
-### Einen früheren Fehler korrigieren
+### Züge einfügen oder löschen
 
-Wenn Sie beim Mitschreiben feststellen, dass ein früherer Zug an der falschen Stelle eingetragen wurde, müssen Sie nicht alle späteren Steine löschen und erneut setzen:
+- Wählen Sie **⨂ Zug löschen** und klicken Sie auf einen Stein der aktuellen Stellung oder eines späteren Zuges, um ihn zu löschen.
+- Wählen Sie **⨁ Zug einfügen** und klicken Sie auf das Brett, um nach der aktuellen Stellung einen Zug hinzuzufügen. Ein Rechtsklick löscht stattdessen einen Zug und wählt die Stellung davor aus.
 
-![!600](/en/ulugo/replace.webp)
+Beim Öffnen eines der Werkzeuge und beim Wechsel zwischen ihnen bleibt die aktuelle Stellung unverändert. Alle Änderungen werden in einer einzigen temporären Variante zusammengeführt. Während der Bearbeitung beendet nur die Auswahl einer anderen Variante den Vorgang.
 
-1. Wählen Sie den falschen Zug im Zugbaum aus. Sie können auch `Shift` gedrückt halten und einen Stein auf dem Brett anklicken, um zum entsprechenden Zug zu springen.
-2. Wählen Sie das Werkzeug **Zug ersetzen**. Ulugo kehrt zur Stellung vor dem falschen Zug zurück.
-3. Klicken Sie mit der linken Maustaste auf den richtigen Punkt, um den nächsten Zug zu ersetzen. Spätere Züge, die weiterhin legal sind, bleiben erhalten und werden als halbtransparente Steine angezeigt.
-   - Neu hinzugefügte Züge erhalten einen <span style='color:#0064ff'>blauen Schatten</span>, ersetzte Züge einen <span style='color:#ff4d4f'>roten Schatten</span>.
-   - Soll vor dem nächsten Zug ein vergessener Zug eingefügt statt ersetzt werden, setzen Sie den Stein mit einem Rechtsklick.
-   - Im Werkzeug **Zug ersetzen** löscht die Löschtaste nur den aktuellen Zug.
-4. Prüfen Sie das Ergebnis und klicken Sie zum Bestätigen auf ✓ oder drücken Sie `Enter`.
-   - Klicken Sie auf X oder drücken Sie `Esc`, um den Ersetzungsmodus zu verwerfen und die ursprüngliche Brettstellung wiederherzustellen.
+Spätere Züge bleiben erhalten, solange sie legal sind. Eingefügte und gelöschte Züge erhalten einen <span style='color:#0064ff'>blauen</span> bzw. <span style='color:#ff4d4f'>roten Schatten</span>. Klicken Sie zum Bestätigen auf ✓ oder drücken Sie `Enter`. Klicken Sie auf X oder drücken Sie `Esc`, um abzubrechen und die ursprüngliche Partieaufzeichnung wiederherzustellen.
+
+Beide Werkzeuge lassen sich kombinieren. Um einen falsch notierten Zug zu korrigieren, löschen Sie ihn und fügen anschließend den richtigen Zug ein.
 
 ### Mit Fotos mitschreiben
 
@@ -39,8 +35,8 @@ Diese Funktion steht nur im Hauptzweig der Partie zur Verfügung.
 
 ### Eine Brettaufstellung in normale Züge umwandeln
 
-Nachdem ein Foto zur Partie hinzugefügt wurde, kann der Knoten der fotografierten Stellung zunächst bestehen bleiben. Wenn die tatsächliche Zugfolge bekannt ist, lässt er sich mit dem Modus **Zug ersetzen** in normale Züge umwandeln.
+Nachdem ein Foto zur Partie hinzugefügt wurde, kann der Knoten der fotografierten Stellung zunächst bestehen bleiben. Wenn die tatsächliche Zugfolge bekannt ist, wählen Sie **Zug einfügen** und tragen die Züge der Reihe nach ein.
 
 ![!600](/en/ulugo/replace-scan-move.webp)
 
-Beim Bestätigen wird der Knoten der fotografierten Stellung unmittelbar nach den neu eingegebenen Zügen gelöscht.
+Während der Ergänzung bleiben weiterhin gültige Inhalte nach dem Knoten der fotografierten Stellung erhalten. Beim Bestätigen wird der Knoten der fotografierten Stellung unmittelbar nach den hinzugefügten Zügen gelöscht; beim Abbrechen wird die Partieaufzeichnung vor der Bearbeitung wiederhergestellt.

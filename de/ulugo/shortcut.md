@@ -33,6 +33,8 @@ Unter macOS kann `Command` anstelle von `Ctrl` verwendet werden. Damit diese Nav
 - `Ctrl + V`: SGF oder Bild aus der Zwischenablage öffnen; dieses Kürzel ist reserviert und kann nicht neu belegt werden
 - `Esc`: Zählergebnis verlassen oder zum Werkzeug **Abwechselnd spielen** zurückkehren
 - `Shift + Klick` auf das Brett: bei einem vorhandenen Stein zu dessen Zug springen, bei einem späteren Zug dorthin vorgehen
+- Rechtsklick mit **Zug einfügen**: Zug löschen und die Stellung davor auswählen
+- Rechtsklick mit **Zug löschen**: Zug einfügen
 - Mausrad über dem Brett: vorherigen oder nächsten Zug anzeigen
 - `Alt + Klick` auf einen empfohlenen Zug: dessen Hauptvariante anzeigen (**Desktop**)
 
@@ -61,7 +63,8 @@ Unter macOS kann `Command` anstelle von `Ctrl` verwendet werden. Damit diese Nav
 | Passen | `P` |
 | Abwechselnd spielen | `1` |
 | Schwarzen / weißen Stein setzen | `2` / `3` |
-| Zug ersetzen | `4` |
+| Zug einfügen | `4` |
+| Zug löschen | Nicht zugewiesen |
 | Text / Kreis / Quadrat / Dreieck / Kreuz hinzufügen | `5` / `6` / `7` / `8` / `9` |
 | Markierung löschen | `0` |
 

@@ -14,20 +14,16 @@ Sur un téléphone ou une tablette, le mode minimal permet au goban d’occuper 
 
 ![!620](/en/ulugo/minimal-mode.webp)
 
-### Corriger un coup antérieur
+### Insérer ou supprimer des coups
 
-Si vous découvrez qu’un ancien coup a été enregistré au mauvais endroit, il n’est pas nécessaire de supprimer puis de rejouer toutes les pierres suivantes :
+- Sélectionnez **⨂ Supprimer le coup**, puis cliquez sur une pierre de la position actuelle ou d’un coup ultérieur pour la supprimer.
+- Sélectionnez **⨁ Insérer un coup**, puis cliquez sur le goban pour ajouter un coup après la position actuelle. Un clic droit supprime plutôt un coup et sélectionne la position précédente.
 
-![!600](/en/ulugo/replace.webp)
+L’entrée dans l’un des outils et le passage de l’un à l’autre ne changent pas la position actuelle. Toutes les modifications sont regroupées dans une seule variante temporaire. Pendant l’édition, seule la sélection d’une autre variante met fin à la session.
 
-1. Sélectionnez le coup incorrect dans l’arbre des coups. Vous pouvez aussi maintenir `Shift` et cliquer sur une pierre du goban pour accéder au coup correspondant ;
-2. Sélectionnez l’outil **Remplacer le coup**. Ulugo revient à la position précédant le coup incorrect ;
-3. Cliquez avec le bouton gauche sur le bon point pour remplacer le coup suivant. Les coups ultérieurs qui restent légaux sont conservés et apparaissent sous forme de pierres semi-transparentes ;
-   - Les nouveaux coups sont signalés par une <span style='color:#0064ff'>ombre bleue</span>, et les coups remplacés par une <span style='color:#ff4d4f'>ombre rouge</span> ;
-   - Pour insérer un coup oublié avant le coup suivant au lieu de le remplacer, posez la pierre avec un clic droit ;
-   - Dans l’outil **Remplacer le coup**, le bouton de suppression ne supprime que le coup actuel ;
-4. Après vérification, cliquez sur ✓ ou appuyez sur `Enter` pour confirmer ;
-   - Cliquez sur X ou appuyez sur `Esc` pour abandonner le mode de remplacement et restaurer la position d’origine.
+Les coups ultérieurs qui restent légaux sont conservés. Les coups insérés et supprimés sont signalés respectivement par une <span style='color:#0064ff'>ombre bleue</span> et une <span style='color:#ff4d4f'>ombre rouge</span>. Cliquez sur ✓ ou appuyez sur `Enter` pour confirmer. Cliquez sur X ou appuyez sur `Esc` pour annuler et restaurer la partie d’origine.
+
+Les deux outils peuvent être combinés. Pour corriger un coup mal saisi, supprimez-le, puis insérez le bon coup.
 
 ### Notation par photos
 
@@ -39,8 +35,8 @@ Cette fonction n’est disponible que sur la branche principale de la partie.
 
 ### Convertir une configuration du plateau en coups ordinaires
 
-Après avoir ajouté une photo à la partie, vous pouvez conserver temporairement le nœud correspondant à la position photographiée. Si vous connaissez l’ordre réel des coups, utilisez le mode **Remplacer le coup** pour les convertir en coups ordinaires.
+Après avoir ajouté une photo à la partie, vous pouvez conserver temporairement le nœud correspondant à la position photographiée. Si vous connaissez l’ordre réel des coups, sélectionnez **Insérer un coup**, puis saisissez les coups dans cet ordre.
 
 ![!600](/en/ulugo/replace-scan-move.webp)
 
-Lors de la confirmation, le nœud de position photographiée qui suit immédiatement les nouveaux coups est supprimé.
+Le contenu encore valide après le nœud de position photographiée est conservé pendant la saisie. La confirmation supprime le nœud de position photographiée qui suit immédiatement les coups ajoutés ; l’annulation restaure la partie antérieure à la modification.
