@@ -17,6 +17,19 @@ npm run dev
 
 Set `PORT` or `HOST` to override the default `127.0.0.1:4000`.
 
+## Namerena
+
+To preview the Namerena release locally, run `npm run dev` and open `http://127.0.0.1:4000/namerena/`.
+
+After running `pnpm build` in the Namerena repository, copy the new release into this repository.
+
+```sh
+release=/path/to/namerena/dist
+cp -R "$release"/{index.html,fight.html,assets,flags,lang,gAd.md,lzma_worker-min.js} namerena/
+```
+
+Remove generated files in `namerena/assets/` that are absent from the new build. The player help and iframe example live in `zh/namerena/`.
+
 ## Page index
 
 Add `{{index}}` to a layout or an included sidebar to render a page index. Pages whose templates do not contain the placeholder do not show an index.

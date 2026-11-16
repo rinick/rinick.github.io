@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>名字竞技场 接口测试</title>
 <style type="text/css">
 html {
@@ -44,31 +45,40 @@ min-height: 150px;
 
 </style>
 
-<script type="text/javascript">
-
-function run(){
-	var names = document.querySelector('textarea').value;
-	var base64 = window.btoa(unescape(encodeURIComponent(names))).replace(/\+/g,'-').replace(/\//g,'_');
-	document.querySelector('iframe').src = '/namerena/index.html#n=' + base64;
-}
-function onMessage(e) {
-	console.log(JSON.stringify(e.data, null, ' '));
-	document.querySelector('textarea[readonly]').value = e.data.winners.join('\n');
-}
-window.addEventListener('message', onMessage);
-</script>
 </head>
 <body>
 
 <div class='main'>
 	<div class='left'>
-		<div>输入名字（输入）</div>
-		<textarea></textarea>
-		<button onclick="run()">开始</button>
-		<div>胜利者（输出）</div>
-		<textarea readonly></textarea>
+		<div><label for="names">参战名字</label></div>
+		<textarea id="names">中国
+日本</textarea>
+		<button id="start" type="button">开始</button>
+		<div><label for="winners">胜利者</label></div>
+		<textarea id="winners" readonly></textarea>
 	</div>
-	<iframe></iframe>
+	<iframe id="namerena" title="名字竞技场"></iframe>
 </div>
+<script>
+const iframe = document.querySelector("#namerena");
+const winnersOutput = document.querySelector("#winners");
+const game = new URL("/namerena/?lang=zh", location.origin);
+
+document.querySelector("#start").addEventListener("click", () => {
+  const bytes = new TextEncoder().encode(document.querySelector("#names").value);
+  const binary = Array.from(bytes, (byte) => String.fromCharCode(byte)).join("");
+  const encoded = btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  winnersOutput.value = "";
+  game.hash = `n=${encoded}`;
+  iframe.src = game.href;
+});
+
+window.addEventListener("message", (event) => {
+  if (event.origin !== game.origin || event.source !== iframe.contentWindow) return;
+  const { winners, all } = event.data ?? {};
+  if (!Array.isArray(winners) || !Array.isArray(all)) return;
+  winnersOutput.value = winners.join("\n");
+});
+</script>
 </body>
 </html>

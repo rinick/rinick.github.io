@@ -4,15 +4,15 @@ layout: namerena_simple
 
 ### 去社区交流游戏心得
 
-* <a href="https://shenjack.top:10008/" target="_blank">论坛</a>
-* <a href="http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA" target="_blank">百度贴吧</a>
-* QQ群 ： 1079992837
+* <a href="https://shenjack.top:10008/" target="_blank" rel="noopener">论坛</a>
+* <a href="https://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA" target="_blank" rel="noopener">百度贴吧</a>
+* QQ 群 `1079992837`
 
 
 ### 切换语言包
 
-* <a href="http://namerena.github.io/?l=0" target="_top">普通版</a>
-* <a href="http://namerena.github.io/?l=1#l=lang%2Fzh-money.json" target="_top">大富翁语言包</a>
+* <a href="/namerena/?lang=zh" target="_top">简体中文</a>
+* <a href="/namerena/?l=lang%2Fzh-money.json" target="_top">大富翁语言包</a>
 
 ### 导航
 
