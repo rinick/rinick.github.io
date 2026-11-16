@@ -4,7 +4,7 @@ layout: namerena_simple
 
 ### 去社区交流游戏心得
 
-* <a href="https://namerena.flarum.cloud/" target="_blank">论坛</a>
+* <a href="https://shenjack.top:10008/" target="_blank">论坛</a>
 * <a href="http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA" target="_blank">百度贴吧</a>
 * QQ群 ： 1079992837
 

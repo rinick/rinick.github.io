@@ -39,6 +39,6 @@ title:  "名字竞技场"
 
 ### 社区
 
-* [论坛](https://namerena.flarum.cloud/)
+* [论坛](https://shenjack.top:10008/)
 * [百度贴吧](http://tieba.baidu.com/%E5%90%8D%E5%AD%97%E7%AB%9E%E6%8A%80%E5%9C%BA)
 * QQ群 ： 1079992837
