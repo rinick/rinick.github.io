@@ -21,7 +21,11 @@ The game replaces the first `???` with each number from `000` to `999` and lists
 
 ## Keep the name or badge you like
 
+### Keep the name
+
 `Rick`, `Rick Zhou`, `Rick@Nightfall`, and `Rick Zhou@Nightfall` all appear as **Rick** in the battle log. Try a different clan or add text after a space to roll different stats without changing the name people see in battle.
+
+### Keep the badge
 
 To keep a badge in a free-for-all, keep the clan and change the name. For example, `Alice@Nightfall` and `Bob@Nightfall` share the Nightfall badge.
 

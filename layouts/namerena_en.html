@@ -5,38 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}} | Namerena</title>
     <link rel="stylesheet" href="{{baseUrl}}/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" href="{{baseUrl}}/stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" href="{{baseUrl}}/en/namerena/help.css" media="screen">
     <link rel="stylesheet" href="{{baseUrl}}/stylesheets/print.css" media="print">
   </head>
-  <body>
+  <body class="namerena-help">
     <header>
       <div class="inner">
         <h2 class="innerTitle">Namerena</h2>
+        <a class="help-menu" href="#sidebar">Guide topics</a>
       </div>
     </header>
     <div id="content-wrapper">
       <div class="inner clearfix">
         <main id="main-content">
-          <h1>{{title}}</h1>
+          <h2>{{title}}</h2>
           {{content}}
         </main>
         <aside id="sidebar">
-          <nav aria-label="Namerena">
+          <a class="button" href="/namerena/?lang=en" aria-label="Play Namerena">
+            <small>Namerena</small>
+            Play now
+          </a>
+          <a class="link" href="https://github.com/rinick" target="_blank" rel="noopener">
+            <div style="background-image: url(https://github.com/favicon.ico);"></div>
+            GitHub
+          </a>
+
+          <nav aria-label="Namerena help">
             <ul>
-              <li><a href="/namerena/?lang=en">Play Namerena</a></li>
+              <li><a href="/en/">Deep Mess</a></li>
+              <li><a href="/zh/namerena/" lang="zh" hreflang="zh">中文帮助</a></li>
+            </ul>
+            <h2>Game guide</h2>
+            <ul>
               <li><a href="/en/namerena/">Getting started</a></li>
               <li><a href="naming.html">Naming rules</a></li>
               <li><a href="attribute.html">Attributes</a></li>
               <li><a href="skill.html">Skills</a></li>
               <li><a href="special.html">Bosses and seeds</a></li>
               <li><a href="testing.html">Testing names</a></li>
+            </ul>
+            <h2>More resources</h2>
+            <ul>
               <li><a href="custom_lan.html">Languages</a></li>
               <li><a href="api.html">Embedding the game</a></li>
+              <li><a href="/en/namerena/#community">Community</a></li>
               <li><a href="about.html">About</a></li>
             </ul>
-            <p><a href="/zh/namerena/" lang="zh" hreflang="zh">中文帮助</a> · <a href="/en/">Deep Mess</a></p>
           </nav>
         </aside>
       </div>
     </div>
+    <script src="{{baseUrl}}/js/image-popup.js"></script>
   </body>
 </html>

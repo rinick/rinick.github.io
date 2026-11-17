@@ -1,0 +1,57 @@
+.help-menu {
+  display: none;
+}
+
+.namerena-help #main-content h1 {
+  margin-bottom: 0.5em;
+  font-size: 1.7em;
+}
+
+.namerena-help #main-content th,
+.namerena-help #main-content td {
+  text-align: left;
+  vertical-align: top;
+}
+
+.namerena-help .battle-example {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.namerena-help .battle-example img {
+  height: auto;
+  box-shadow: 0 0 5px #888;
+}
+
+.namerena-help .battle-example figcaption {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+}
+
+.namerena-help #sidebar nav h2 {
+  margin: 1.25em 0 0.35em;
+  color: #474747;
+  font-size: 1em;
+}
+
+.namerena-help #sidebar nav ul {
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .namerena-help header .inner {
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .namerena-help header h2 {
+    width: auto;
+  }
+
+  .help-menu {
+    display: block;
+    flex-shrink: 0;
+    color: #fff;
+    text-decoration: underline;
+  }
+}

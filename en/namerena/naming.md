@@ -21,9 +21,11 @@ The name and clan determine a fighter’s base stats and skills. Gear can change
 - The starting lineup shows the clan. The battle log uses the fighter’s name.
 - If you enter the same name and clan more than once, the game keeps the first entry. This also applies if the entries use different gear.
 
-## Spaces and length
+## Spaces and display names
 
 The game uses the whole name to generate a fighter, including spaces and the text after them. The battle log shows only the part before the first space. For example, `Rick Zhou` appears as `Rick`.
+
+## Input limits
 
 A clan can be up to 64 UTF-16 code units long. The same limit applies to a name with no explicit clan. With an explicit clan, the name can be up to 80 code units. An English letter or a common Chinese character takes one code unit, while many emoji take two.
 
