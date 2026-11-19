@@ -26,6 +26,8 @@ title:  "特殊名字"
 | [lazy@!](/namerena/?lang=zh#b=lazy@!) | ![](images/lazy.gif) 懒癌 | | 犯了懒癌就什么都不想做。。 |
 | [saitama@!](/namerena/?lang=zh#b=saitama@!) | ![](images/saitama.gif) 一拳超人 | 一拳超人 | 强到几乎无敌，总喜欢等到最后才出手 |
 | [covid@!](/namerena/?lang=zh#b=covid@!) | ![](images/covid.gif) 新冠病毒 |  | 人多就会交叉传染，最好装备上口罩（名字后加 `+口罩`） |
+| [thanos@!](/namerena/?lang=zh#b=thanos@!) | ![](images/thanos.gif) 灭霸 | 漫威 | 对手比己方多时，一个响指就让随机一半的对手化成灰烬（人数向下取整）。每次行动前还会积攒护盾。 |
+| [wheel@!](/namerena/?lang=zh#b=wheel@!) | ![](images/wheel.gif) 生命之轮 | 原创 | 挨打后会更快出手，还会反击。轮到它时，如果体力最高的对手比它多至少 64 点，就跟那名对手交换体力，最多换到自己的体力上限。 |
 
 
 ### 随机数种子

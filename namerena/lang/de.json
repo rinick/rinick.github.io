@@ -93,7 +93,7 @@
   "killerName": "Ausgeschaltet von",
   "loserName": "Besiegte",
   "HP": "LP",
-  "detail": " ANG [] ABW [] TEM [] GES [] MAG [] RES [] INT []",
+  "detail": " ANG [] ABW [] TEM [] GES [] MAG [] RES [] INT []",
   "inputTitle": "Namerena",
   "inputPlaceholder": "Gib einen Namen pro Zeile ein.\n\nTrenne Teams durch eine Leerzeile.",
   "win": "Der Sieg geht an [2]",
@@ -174,5 +174,9 @@
   "saitamaLeave": "[0] verlässt das Schlachtfeld",
   "saitamaHungry": "[0] bekommt Hunger",
   "sklConanKillUnknown": "[0] entdeckt eine unbekannte Leiche in einem verschlossenen Raum",
-  "sklHide": "[0] [versteckt sich]"
+  "sklHide": "[0] [versteckt sich]",
+  "bossName_thanos": "Thanos",
+  "bossName_wheel": "Rad des Lebens",
+  "sklThanosSnap": "[0] [schnippt] mit den Fingern",
+  "sklThanosDust": "[1] zerfällt zu Staub"
 }

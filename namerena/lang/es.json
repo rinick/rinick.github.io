@@ -93,7 +93,7 @@
   "killerName": "Noqueado por",
   "loserName": "Derrotados",
   "HP": "PV",
-  "detail": " ATQ [] DEF [] VEL [] AGI [] MAG [] RES [] INT []",
+  "detail": " ATQ [] DEF [] VEL [] AGI [] MAG [] RES [] INT []",
   "inputTitle": "Namerena",
   "inputPlaceholder": "Introduce un nombre por línea.\n\nDeja una línea en blanco entre equipos.",
   "win": "La victoria es para [2]",
@@ -174,5 +174,9 @@
   "saitamaLeave": "[0] abandona el campo de batalla",
   "saitamaHungry": "[0] empieza a tener hambre",
   "sklConanKillUnknown": "[0] encuentra un cadáver sin identificar en una habitación cerrada con llave",
-  "sklHide": "[0] se mueve con [sigilo]"
+  "sklHide": "[0] se mueve con [sigilo]",
+  "bossName_thanos": "Thanos",
+  "bossName_wheel": "Rueda de la vida",
+  "sklThanosSnap": "[0] [chasquea los dedos]",
+  "sklThanosDust": "[1] se convierte en polvo"
 }

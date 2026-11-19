@@ -93,7 +93,7 @@
   "killerName": "마지막 일격",
   "loserName": "패배",
   "HP": "HP",
-  "detail": " 공격 [] 방어 [] 속도 [] 민첩 [] 마력 [] 저항 [] 지능 []",
+  "detail": " 공격 [] 방어 [] 속도 [] 민첩 [] 마력 [] 저항 [] 지능 []",
   "inputTitle": "Namerena",
   "inputPlaceholder": "한 줄에 이름을 하나씩 입력하세요.\n\n팀 사이에는 빈 줄을 넣으세요.",
   "win": "[2] 승리",
@@ -174,5 +174,9 @@
   "saitamaLeave": "[0] 전장을 떠났다",
   "saitamaHungry": "[0] 배가 고파졌다",
   "sklConanKillUnknown": "[0] 밀실에서 신원 미상의 시신을 발견했다",
-  "sklHide": "[0] [은신]"
+  "sklHide": "[0] [은신]",
+  "bossName_thanos": "타노스",
+  "bossName_wheel": "생명의 수레바퀴",
+  "sklThanosSnap": "[0] [손가락을 튕겼다]",
+  "sklThanosDust": "[1] 먼지가 되어 사라졌다"
 }

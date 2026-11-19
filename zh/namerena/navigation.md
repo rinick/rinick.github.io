@@ -11,7 +11,7 @@ layout: namerena_simple
 
 ### 切换语言包
 
-* <a href="/namerena/?lang=zh" target="_top">简体中文</a> · <a href="/namerena/?l=lang%2Fzh-TW.json" target="_top">繁體中文</a> · <a href="/namerena/?lang=en" target="_top">English</a>
+* <a href="/namerena/?lang=zh" target="_top">简体中文</a> · <a href="/namerena/?l=lang%2Fzh-Hant.json" target="_top">繁體中文</a> · <a href="/namerena/?lang=en" target="_top">English</a>
 * <a href="/namerena/?l=lang%2Fzh-money.json" target="_top">大富翁语言包</a>
 * 其他语言可通过游戏右上方的国旗切换。
 

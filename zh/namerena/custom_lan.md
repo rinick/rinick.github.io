@@ -24,7 +24,7 @@ title:  "语言设置与自定义语言包"
 
 ### 使用其他语言包
 
-- [繁體中文](/namerena/?l=lang%2Fzh-TW.json)
+- [繁體中文](/namerena/?l=lang%2Fzh-Hant.json)
 - [大富翁语言包](/namerena/?l=lang%2Fzh-money.json)用金币代替生命值。如果不喜欢打打杀杀，推荐试一下这个语言包。
 
 `?l=` 接受语言文件的路径或网址。如果链接同时包含 `lang` 和 `l`，游戏优先使用有效的 `lang`。

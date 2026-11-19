@@ -24,7 +24,7 @@ Add `?lang=en` or another code to the game URL to open it in that language. A li
 
 ## Try another language pack
 
-- [Traditional Chinese](/namerena/?l=lang%2Fzh-TW.json)
+- [Traditional Chinese](/namerena/?l=lang%2Fzh-Hant.json)
 - [Money pack](/namerena/?l=lang%2Fzh-money.json) (Chinese). If you’ve had enough of all the fighting, try counting coins instead.
 
 Use `?l=` to pass the path or URL of a language file. If a link has both parameters, a supported `lang` takes priority.

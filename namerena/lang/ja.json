@@ -93,7 +93,7 @@
   "killerName": "とどめを刺した相手",
   "loserName": "敗者",
   "HP": "HP",
-  "detail": " 攻 [] 防 [] 速 [] 敏 [] 魔 [] 抗 [] 知 []",
+  "detail": " 攻 [] 防 [] 速 [] 敏 [] 魔 [] 抗 [] 知 []",
   "inputTitle": "Namerena",
   "inputPlaceholder": "名前を1行に1人ずつ入力してください。\n\nチームの間には空行を入れてください。",
   "win": "[2]の勝利",
@@ -174,5 +174,9 @@
   "saitamaLeave": "[0]は戦場を去った",
   "saitamaHungry": "[0]は空腹を覚えた",
   "sklConanKillUnknown": "[0]は密室で身元不明の遺体を見つけた",
-  "sklHide": "[0]は[姿を隠した]"
+  "sklHide": "[0]は[姿を隠した]",
+  "bossName_thanos": "サノス",
+  "bossName_wheel": "生命の輪",
+  "sklThanosSnap": "[0]は[指を鳴らした]",
+  "sklThanosDust": "[1]は塵になった"
 }

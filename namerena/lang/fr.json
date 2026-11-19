@@ -93,7 +93,7 @@
   "killerName": "Mis K.-O. par",
   "loserName": "Vaincus",
   "HP": "PV",
-  "detail": " ATQ [] DÉF [] VIT [] AGI [] MAG [] RÉS [] INT []",
+  "detail": " ATQ [] DÉF [] VIT [] AGI [] MAG [] RÉS [] INT []",
   "inputTitle": "Namerena",
   "inputPlaceholder": "Saisissez un nom par ligne.\n\nSéparez les équipes par une ligne vide.",
   "win": "La victoire revient à [2]",
@@ -174,5 +174,9 @@
   "saitamaLeave": "[0] quitte le champ de bataille",
   "saitamaHungry": "[0] commence à avoir faim",
   "sklConanKillUnknown": "[0] trouve un corps non identifié dans une pièce fermée à clé",
-  "sklHide": "[0] se fait [discret]"
+  "sklHide": "[0] se fait [discret]",
+  "bossName_thanos": "Thanos",
+  "bossName_wheel": "Roue de la vie",
+  "sklThanosSnap": "[0] [claque des doigts]",
+  "sklThanosDust": "[1] tombe en poussière"
 }
