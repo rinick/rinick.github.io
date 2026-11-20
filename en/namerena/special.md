@@ -22,8 +22,8 @@ Pick a boss from the challenge menu, or enter its name on a separate team. Try t
 | [`lazy@!`](/namerena/?lang=en#b=lazy@!) | ![](/zh/namerena/images/lazy.gif) Laziness Cancer | Catch it and you won’t feel like doing anything... |
 | [`saitama@!`](/namerena/?lang=en#b=saitama@!) | ![](/zh/namerena/images/saitama.gif) Saitama (*One-Punch Man*) | Almost unbeatable. He likes to wait until the very end to make his move. |
 | [`covid@!`](/namerena/?lang=en#b=covid@!) | ![](/zh/namerena/images/covid.gif) COVID-19 | Spreads in a crowd. You might want a mask. Add `+mask` to a fighter’s name to equip one. |
-| [`thanos@!`](/namerena/?lang=en#b=thanos@!) | ![](/zh/namerena/images/thanos.gif) Thanos (*Marvel*) | Outnumber his side and he’ll snap his fingers. He picks half his opponents at random (rounding down) and turns them to dust. He builds up his shield before each turn. |
-| [`wheel@!`](/namerena/?lang=en#b=wheel@!) | ![](/zh/namerena/images/wheel.gif) Wheel of Life | Taking damage from a hit brings its next turn closer, and it can counterattack. On its turn, it swaps HP with the opponent who has the most HP if that opponent has at least 64 more than it does. The Wheel can gain HP up to its own maximum. |
+| [`thanos@!`](/namerena/?lang=en#b=thanos@!) | ![](/zh/namerena/images/thanos.gif) Thanos (*Marvel*) | One snap and half the team turns to dust... |
+| [`wheel@!`](/namerena/?lang=en#b=wheel@!) | ![](/zh/namerena/images/wheel.gif) Wheel of Life | Every hit brings its turn closer, so watch out for an HP swap... |
 
 ## Random seeds
 
